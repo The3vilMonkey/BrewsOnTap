@@ -1,5 +1,14 @@
 /* CSS declarations go here */
 @import "/packages/bootstrap3-less/bootstrap.import.less";
+@import "/client/fonts.import.less";
+
+
+@font-size: 14px;     // Your base font-size in pixels
+@content-color: #606060;
+@headline-color: #951c23;
+@sidebar-color: #ecd7ac;
+@sidebar-background-color: #686765;
+@robot-grey: #4F4D4D;
 
 
 html:fullscreen {
@@ -11,11 +20,29 @@ html:-moz-full-screen {
 }
  
 html:-webkit-full-screen {
-  background: red;
+  #ontap {
+    color: @headline-color;
+    font-family: "OstrichSansMedium";
+    font-weight: normal;
+    font-size: 49px;
+    padding-bottom: 23px;
+    padding-top: 60px;
+    margin-top: 0;
+  }
 }
  
 html:-ms-fullscreen {
   background: red;
   width: 100%; /* needed to center contents in IE */
 }
- 
+
+h1 {
+  color: @headline-color;
+  font-family: "OstrichSansMedium";
+  font-weight: normal;
+  font-size: 49px;
+  padding-bottom: 23px;
+  padding-top: 60px;
+  margin-top: 0;
+
+}
