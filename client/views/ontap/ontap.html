@@ -1,0 +1,35 @@
+<template name="ontap">
+    <h1>Tin Whiskers Beers</h1>
+
+    {{#if editMode}}
+        {{> ontap_edit}}
+    {{else}}
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Beer name  </th>
+                <th> Style      </th>
+                <th> ABV %      </th>
+                <th> Price      </th>
+                <th> On Tap?    </th>
+                <th> <button href="#" class="btn btn-default navbar-btn fullscreen">
+                        <i class="fa fa-arrows-alt"></i>
+                    </button>           
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each beers}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{style}}</td>
+                <td>{{abv}}</td>
+                <td>{{price}}</td>
+                <td>{{ontap}}</td>
+                <td><button href="/edit_beer" id="{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button></td>
+            </tr>
+            {{/each}}
+        </tbody>
+        </table>
+    {{/if}}
+</template>
