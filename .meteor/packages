@@ -4,7 +4,6 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
 insecure
 accounts-ui
 accounts-twitter
@@ -14,3 +13,6 @@ less
 coffeescript
 iron-router
 bootstrap3-less
+autoform
+collection2
+font-awesome

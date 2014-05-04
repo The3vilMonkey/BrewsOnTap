@@ -1,7 +1,6 @@
 Template.home.events
-	"click home .button": (evt) ->
+	"click button.brewery": (evt) ->
 		evt.preventDefault()
-		$a = $(evt.target).button
-		href = $a.attr('href')
+		href = $(evt.target).attr('href')
 		Router.go(href)
     

@@ -1,6 +1,8 @@
 {
   "packages": {
     "iron-router": {},
-    "bootstrap3-less": {}
+    "bootstrap3-less": {},
+    "autoform": {},
+    "font-awesome": {}
   }
 }

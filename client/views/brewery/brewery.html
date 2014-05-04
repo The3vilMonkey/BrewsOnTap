@@ -1,3 +1,30 @@
  <template name="brewery">
-  <h1>Dummy Brewery Page</h1>
+    <h1>Tin Whiskers Beers</h1>
+
+    {{#if editMode}}
+
+    {{else}}
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Beer name  </th>
+                <th> Style      </th>
+                <th> ABV %      </th>
+                <th> Price      </th>
+                <th> On Tap?    </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each beers}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{style}}</td>
+                <td>{{abv}}</td>
+                <td>{{price}}</td>
+                <td>{{ontap}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+        </table>
+    {{/if}}
  </template>

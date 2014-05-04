@@ -1,26 +1,54 @@
+
+
+
+addToolbarButtons = (arrayOfButtons) ->
+  for button in arrayOfButtons
+    Session.set(button, true)
+
+removeToolbarButtons = (arrayOfButtons) ->
+  for button in arrayOfButtons
+    Session.set(button, false)
+
 Router.configure 
   layoutTemplate: "layout"
 
-
 Router.map ->
   
-  ###
-  The route's name is "home"
-  The route's template is also "home"
-  The default action will render the home template
-  ###
-  @route "home",
+  @route "ontap",
     path: "/"
-    template: "home"
+    onBeforeAction: ->
+      addToolbarButtons(['AddBeerBtn'])
+    onStop: ->
+      removeToolbarButtons(['AddBeerBtn'])
 
-  
-  ###
-  The route's name is "posts"
-  The route's path is "/posts"
-  The route's template is inferred to be "posts"
-  ###
-  @route "help",
-    path: "/help"
+  @route "ontap",
+    path: "/ontap"
+    waitOn : Meteor.subscribe('beers')
+    onBeforeAction: ->
+      addToolbarButtons(['AddBeerBtn'])
+    onStop: ->
+      removeToolbarButtons(['AddBeerBtn'])
+
+  @route "add_beer",
+    path: "/add_beer"
+    waitOn : Meteor.subscribe('beers')
+
+  @route "edit_beer",
+    path: "/edit_beer/:id"
+    waitOn : Meteor.subscribe('beers')
+    onBeforeAction: ->
+      beerId = this.params.id
+      Session.set( 'editingBeerId' , beerId ) 
+    onStop: ->
+      Session.set( 'editingBeerId' , false )
+
 
   @route "brewery",
     path: "/brewery"
+    waitOn : ->
+      Meteor.subscribe('breweries')
+      Meteor.subscribe('beers')
+    onBeforeAction: ->
+      addToolbarButtons(['AddBeerBtn'])
+    onStop: ->
+      removeToolbarButtons(['AddBeerBtn'])
