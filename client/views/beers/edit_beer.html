@@ -1,3 +1,6 @@
 <template name="edit_beer">
-  {{> quickForm collection="Beers" doc=editingBeer id="updateBeerForm" type="update"}}
+    <div class="container">
+        {{> quickForm collection="Beers" doc=editingBeer id="updateBeerForm" type="update"}}
+        <button href="/ontap" class="btn btn-warning form-cancel">Cancel</button>
+    </div>
 </template>
