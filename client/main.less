@@ -5,11 +5,38 @@
 
 @font-size: 14px;     // Your base font-size in pixels
 @content-color: #606060;
-@headline-color: #951c23;
-@sidebar-color: #ecd7ac;
-@sidebar-background-color: #686765;
 @robot-grey: #4F4D4D;
 
+@robot-dark-grey: #212121;
+@robot-med-grey: #686766;
+@robot-light-grey: #d2d2d2;
+@headline-color: #951c23;
+@beer-heading-color: @robot-dark-grey;
+@sidebar-color: #ecd7ac;
+@sidebar-background-color: #686765;
+
+.fullscreenMixin {
+  #ontap {
+    color: @headline-color;
+    font-family: "OstrichSansMedium";
+    font-weight: normal;
+    font-size: 49px;
+    margin-top: 0;
+    th {
+      letter-spacing: 3px;
+    }
+    h1 {
+      padding-top: 20px;
+      font-size: 82px;
+    }
+    tr {
+      color: @robot-dark-grey;
+    }
+  }
+  .hide-fullscreen {
+    display: none;
+  }
+}
 
 html:fullscreen {
   background: red;
@@ -20,15 +47,7 @@ html:-moz-full-screen {
 }
  
 html:-webkit-full-screen {
-  #ontap {
-    color: @headline-color;
-    font-family: "OstrichSansMedium";
-    font-weight: normal;
-    font-size: 49px;
-    padding-bottom: 23px;
-    padding-top: 60px;
-    margin-top: 0;
-  }
+  .fullscreenMixin()
 }
  
 html:-ms-fullscreen {

@@ -1,6 +1,10 @@
 Template.ontap.beers = () ->
     Beers.find({})
 
+Template.ontap.hide = (ontap) ->
+    if not ontap
+        return "hide-fullscreen"
+
 Template.ontap.events
     "click button.edit": (evt) ->
         evt.preventDefault()

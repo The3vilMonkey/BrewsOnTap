@@ -1,37 +1,36 @@
 <template name="ontap">
     <div id="ontap">
         <h1>Tin Whiskers Beers</h1>
-    
-        {{#if editMode}}
-            {{> ontap_edit}}
-        {{else}}
-            <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th> Beer name  </th>
-                    <th> Style      </th>
-                    <th> ABV %      </th>
-                    <th> Price      </th>
-                    <th> On Tap?    </th>
-                    <th> <button href="#" class="btn btn-   default navbar-btn fullscreen">
-                            <i class="fa fa-arrows-alt"></i>
-                        </button>           
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each beers}}
-                <tr>
-                    <td>{{name}}</td>
-                    <td>{{style}}</td>
-                    <td>{{abv}}</td>
-                    <td>{{price}}</td>
-                    <td>{{ontap}}</td>
-                    <td><button href="/edit_beer" id="  {{_id}}" class="btn btn-default navbar    -btn edit"> Edit Beer</button></td>
-                </tr>
-                {{/each}}
-            </tbody>
-            </table>
-        {{/if}}
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Beer</th>
+                <th>Style</th>
+                <th>ABV</th>
+                <th>Pint</th>
+                <th>10oz</th>
+                <th>3oz</th>
+                <th class="hide-fullscreen">On Tap?</th>
+                <th class="hide-fullscreen"><button href="#" class="btn btn-default navbar-btn fullscreen">
+                        <i class="fa fa-arrows-alt"></i>
+                    </button>           
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each beers}}
+            <tr class="{{hide ontap}}">
+                <td> {{name}}</td>
+                <td> {{style}}</td>
+                <td> {{abv}}</td>
+                <td> {{pint_price}}</td>
+                <td> {{tulip_price}}</td>
+                <td> {{taster_price}}</td>
+                <td class="hide-fullscreen"> {{ontap}}</td>
+                <td class="hide-fullscreen"><button href="/edit_beer" id="{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button></td>
+            </tr>
+            {{/each}}
+        </tbody>
+        </table>
     </div>
 </template>

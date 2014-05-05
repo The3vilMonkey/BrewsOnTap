@@ -25,6 +25,26 @@ Breweries.allow
       max: 500
       label: "Description"
 
+    abv:
+      type: String
+      max: 6
+      label: "ABV"
+
+    pint_price:
+      type: String
+      max: 6
+      label: "Print Price"
+
+    tulip_price:
+      type: String
+      max: 6
+      label: "Tulip Price"
+
+    taster_price:
+      type: String
+      max: 6
+      label: "Taster Price"
+
     ontap:
       type: Boolean
       label: "Ontap"
