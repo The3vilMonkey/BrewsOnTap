@@ -17,9 +17,9 @@
             {{#if AddBeerBtn}}
               <button href="/add_beer" class="btn btn-default navbar-btn"> Add Beer</button>
             {{/if}}
+            <button href="/admin" class="btn btn-default navbar-btn"> Admin</button>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/Help">Help</a></li>
-              <div class="pull-right">{{> loginButtons}}</div>
+              {{> loginButtons}}
             </ul>
           </div>
         </nav>

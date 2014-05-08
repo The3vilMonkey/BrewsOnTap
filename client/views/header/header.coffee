@@ -1,9 +1,11 @@
 Template.header.events
-    "click header .navbar a": (evt) ->
+    "click header .navbar a.navbar-brand": (evt) ->
         evt.preventDefault()
         $a = $(evt.target).closest('a')
         href = $a.attr('href')
-        Router.go(href)
+        if href
+            Router.go(href)
+
 
     "click header button": (evt) ->
         evt.preventDefault()

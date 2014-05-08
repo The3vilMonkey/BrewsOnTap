@@ -42,6 +42,16 @@ Router.map ->
     onStop: ->
       Session.set( 'editingBeerId' , false )
 
+  @route "admin",
+    path: "/admin"
+    template: "accountsAdmin"
+    onBeforeAction: ->
+      if Meteor.loggingIn()
+        # @render(@loadingTemplate)
+      else if not Roles.userIsInRole(Meteor.user(), ["admin"])
+        @redirect("/")
+      return
+
 
   @route "brewery",
     path: "/brewery"
