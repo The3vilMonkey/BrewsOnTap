@@ -53,8 +53,20 @@ Breweries.allow
 
 Beers.allow
   insert: (userId, doc) ->
-    true
+    loggedInUser = Meteor.user()
+    if not loggedInUser or not Roles.userIsInRole(loggedInUser,['admin', 'editor'])
+      throw new Meteor.Error(403, "Access denied")
+    else
+      return true
   update: (userId, entries, fields, modifier) ->
-    true
+    loggedInUser = Meteor.user()
+    if not loggedInUser or not Roles.userIsInRole(loggedInUser,['admin', 'editor'])
+      throw new Meteor.Error(403, "Access denied")
+    else
+      return true
   remove: (userId, doc) ->
-    true
+    loggedInUser = Meteor.user()
+    if not loggedInUser or not Roles.userIsInRole(loggedInUser,['admin', 'editor'])
+      throw new Meteor.Error(403, "Access denied")
+    else
+      return true
