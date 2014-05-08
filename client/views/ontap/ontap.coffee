@@ -8,9 +8,8 @@ Template.ontap.hide = (ontap) ->
 Template.ontap.events
     "click button.edit": (evt) ->
         evt.preventDefault()
-        id = $(evt.target).attr('id')
         href = $(evt.target).attr('href')
-        Router.go(href+'/'+id)
+        Router.go(href)
 
     "click button.fullscreen": (evt) ->
         evt.preventDefault()
