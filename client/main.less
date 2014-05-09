@@ -22,13 +22,31 @@
     font-weight: normal;
     font-size: 49px;
     margin-top: 0;
+
     th {
       letter-spacing: 3px;
+      padding-bottom: 25px;
+      &.th-with-subtitle {
+        padding-bottom: 8px;
+        line-height: 35px;
+        .th-subtitle {
+          font-size: 32px;
+          font-weight: normal;
+        }
+      }
     }
     h1 {
       padding-top: 20px;
       font-size: 82px;
     }
+    h2 {
+      color: @robot-dark-grey;
+      font-size: 49px;
+      font-weight: bold;
+      font-family: "OstrichSansMedium";
+      letter-spacing: 3px;
+    }
+
     tr {
       color: @robot-dark-grey;
     }
@@ -60,12 +78,27 @@ h1 {
   font-family: "OstrichSansMedium";
   font-weight: normal;
   font-size: 49px;
-  padding-bottom: 23px;
-  padding-top: 60px;
+  padding-bottom: 0px;
+  padding-top: 0;
   margin-top: 0;
+  margin-bottom: 0;
 
 }
 
 .form-cancel {
   margin-top: 10px;
+}
+
+#ontap th {
+  padding-bottom: 25px;
+  &.th-with-btn {
+    padding-bottom: 5px;
+  }
+  &.th-with-subtitle {
+    padding-bottom: 8px;
+    .th-subtitle {
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
 }

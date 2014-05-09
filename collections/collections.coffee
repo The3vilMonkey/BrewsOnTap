@@ -30,6 +30,16 @@ Breweries.allow
       max: 6
       label: "ABV"
 
+    growler_price:
+      type: String
+      max: 6
+      label: "Growler New Price" 
+
+    growler_fill:
+      type: String
+      max: 6
+      label: "Growler Fill Price"
+
     pint_price:
       type: String
       max: 6
