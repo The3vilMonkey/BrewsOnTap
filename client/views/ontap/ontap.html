@@ -7,6 +7,7 @@
                 <tr>
                     <th>Beer</th>
                     <th>Style</th>
+                    <th>Stage</th>
                     <th>ABV</th>
                     <th class="th-with-subtitle">Growler<div class="th-subtitle">Glass/Fill</div></th>
                     <th>Pint</th>
@@ -24,7 +25,8 @@
                 {{#each beers}}
                 <tr class="{{hide ontap}}">
                     <td> {{name}}</td>
-                    <td> {{style}}</td>
+                    <td> {{stage}}</td>
+                    <td> {{lifecycle}} </td>
                     <td> {{abv}}</td>
                     <td> {{growler_price}} / {{growler_fill}}</td>
                     <td> {{pint_price}}</td>

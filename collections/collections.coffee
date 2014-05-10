@@ -20,6 +20,11 @@ Breweries.allow
       label: "Style"
       max: 50
 
+    stage:
+      type: String
+      label: "Stage"
+      max: 10
+
     description:
       type: String
       max: 500

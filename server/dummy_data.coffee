@@ -9,6 +9,7 @@ Meteor.startup ->
 
           name: "Short Circuit Stout"
           style: "Sweet Stout"
+          stage: "Production"
           description: "A stoutly beer"
           abv: "5.3%"
           growler_price: "5.00"
@@ -20,6 +21,7 @@ Meteor.startup ->
         ,
           name: "Flipswitch IPA"
           style: "American IPA"
+          stage: "Production"
           description: "IPA 4 life"
           abv: "6.1%"
           growler_price: "5.00"
@@ -31,6 +33,7 @@ Meteor.startup ->
         ,
           name: "Wheatstone Bridge"
           style: "American Wheat"
+          stage: "Production"
           description: "Wheatstone bridge is the bestest"
           abv: "6.3%"
           growler_price: "5.00"
@@ -42,6 +45,7 @@ Meteor.startup ->
         ,
           name: "Ampere Amber"
           style: "Amber California Common"
+          stage: "Production"
           description: "Its the current that will kill you"
           abv: "4.2%"
           growler_price: "5.00"
@@ -55,6 +59,7 @@ Meteor.startup ->
             Beers.insert(
                 name: beer.name
                 style: beer.style
+                stage: beer.stage
                 description: beer.description
                 abv: beer.abv
                 growler_price: beer.growler_price
