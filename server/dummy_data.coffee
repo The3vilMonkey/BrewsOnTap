@@ -9,26 +9,47 @@ Meteor.startup ->
 
           name: "Short Circuit Stout"
           style: "Sweet Stout"
-          description: "A stout beer"
-          abv: "6.4%"
-          growler_price: "15.00"
-          growler_fill: "7.00"
+          description: "A stoutly beer"
+          abv: "5.3%"
+          growler_price: "5.00"
+          growler_fill: "14.00"
           pint_price: "5.00"
           tulip_price: "3.50"
           taster_price: "2.00"
-          ontap: false
+          ontap: true
         ,
           name: "Flipswitch IPA"
           style: "American IPA"
           description: "IPA 4 life"
-          abv: "6.7%"
-          growler_price: "15.00"
-          growler_fill: "7.00"
+          abv: "6.1%"
+          growler_price: "5.00"
+          growler_fill: "14.00"
+          pint_price: "5.00"
+          tulip_price: "3.50"
+          taster_price: "2.00"
+          ontap: true
+        ,
+          name: "Wheatstone Bridge"
+          style: "American Wheat"
+          description: "Wheatstone bridge is the bestest"
+          abv: "6.3%"
+          growler_price: "5.00"
+          growler_fill: "15.00"
+          pint_price: "5.00"
+          tulip_price: "3.50"
+          taster_price: "2.00"
+          ontap: true
+        ,
+          name: "Ampere Amber"
+          style: "Amber California Common"
+          description: "Its the current that will kill you"
+          abv: "4.2%"
+          growler_price: "5.00"
+          growler_fill: "14.00"
           pint_price: "5.00"
           tulip_price: "3.50"
           taster_price: "2.00"
           ontap: false
-
         ]
         _.each beers, (beer) ->
             Beers.insert(

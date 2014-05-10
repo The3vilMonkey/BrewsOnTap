@@ -1,46 +1,57 @@
 <template name="ontap">
     <div id="ontap" class="container-fluid">
-        <h1>Tin Whiskers Beers</h1>
-        <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Beer</th>
-                <th>Style</th>
-                <th>ABV</th>
-                <th class="th-with-subtitle">Growler<div class="th-subtitle">New/Refill</div></th>
-                <th>Pint</th>
-                <th>10oz</th>
-                <th>3oz</th>
-                <th class="hide-fullscreen">On Tap?</th>
-                <th class="hide-fullscreen th-with-btn">
-                    <button href="#" class="btn btn-default navbar-btn fullscreen">
-                        <i class="fa fa-arrows-alt"></i>
-                    </button>           
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each beers}}
-            <tr class="{{hide ontap}}">
-                <td> {{name}}</td>
-                <td> {{style}}</td>
-                <td> {{abv}}</td>
-                <td> {{growler_price}} / {{growler_fill}}</td>
-                <td> {{pint_price}}</td>
-                <td> {{tulip_price}}</td>
-                <td> {{taster_price}}</td>
-                <td class="hide-fullscreen"> {{ontap}}</td>
-                <td class="hide-fullscreen"><button href="/edit_beer/{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button></td>
-            </tr>
-            {{/each}}
-        </tbody>
-        </table>        
-        <h2> Flights </h2>
-        <p>Any 4 beers in 3oz tasting glasses $8.00 </p>
-        <h2> Beverages </h2>
-        <p>Aquafina 20 oz $1.50</p>
-        <p>Coke, Diet Coke, Sprite, Dr. Pepper $1.50</p>
+        <div class="col-md-12">
+            <img class="horizontal-wordmark-img" src="http://i.imgur.com/0dvAMM5.jpg">
+            <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Beer</th>
+                    <th>Style</th>
+                    <th>ABV</th>
+                    <th class="th-with-subtitle">Growler<div class="th-subtitle">Glass/Fill</div></th>
+                    <th>Pint</th>
+                    <th>10oz</th>
+                    <th>4oz</th>
+                    <th class="hide-fullscreen">On Tap?</th>
+                    <th class="hide-fullscreen th-with-btn">
+                        <button href="#" class="btn btn-default navbar-btn fullscreen">
+                            <i class="fa fa-arrows-alt"></i>
+                        </button>           
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each beers}}
+                <tr class="{{hide ontap}}">
+                    <td> {{name}}</td>
+                    <td> {{style}}</td>
+                    <td> {{abv}}</td>
+                    <td> {{growler_price}} / {{growler_fill}}</td>
+                    <td> {{pint_price}}</td>
+                    <td> {{tulip_price}}</td>
+                    <td> {{taster_price}}</td>
+                    <td class="hide-fullscreen"> {{ontap}}</td>
+                    <td class="hide-fullscreen"><button href="/edit_beer/{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button></td>
+                </tr>
+                {{/each}}
+            </tbody>
+            </table>        
+            <h2> Flights </h2>
+            <p>Any 4 beers in 4oz tasting glasses: $8.00 </p>
+            <h2> Beverages </h2>
+            <p>Bottled Water 20oz: $2.00</p>
+            <p>Can of Coke, Diet Coke, Mountain Dew, A&W: 1.00</p>
+        </div>
 
-
+    </div>
+    <div id ="footer">
+        <div class="col-md-6">
+             <p>Drink Responsibly</p>
+        </div>
+        <div class="col-md-6">
+            <div class="pull-right">
+                <p>Access this menu from anywhere @ <strong>ontap.twbrewing.com</strong></p>
+            </div>
+        </div>
     </div>
 </template>

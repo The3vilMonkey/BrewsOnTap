@@ -35,6 +35,10 @@
         }
       }
     }
+
+    tr {
+      color: @robot-dark-grey;
+    }
     h1 {
       padding-top: 20px;
       font-size: 82px;
@@ -45,10 +49,11 @@
       font-weight: bold;
       font-family: "OstrichSansMedium";
       letter-spacing: 3px;
+      padding-top: 0px;
     }
-
-    tr {
-      color: @robot-dark-grey;
+    p {
+      font-family: "Helvetica", Arial, sans-serif;
+      font-size: 28px;
     }
   }
   .hide-fullscreen {
@@ -85,6 +90,12 @@ h1 {
 
 }
 
+#ontap {
+  .horizontal-wordmark-img {
+    width: 500px;
+  }
+}
+
 .form-cancel {
   margin-top: 10px;
 }
@@ -100,5 +111,23 @@ h1 {
       font-size: 12px;
       font-weight: normal;
     }
+  }
+}
+
+/////////////////////////////////
+// Footer
+/////////////////////////////////
+
+#footer {
+  font-size: 14px;
+  color: white;
+  background-color: @robot-dark-grey;
+  padding: 10px 0 10px 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  p {
+    color: white;
+    margin: 0;
   }
 }
