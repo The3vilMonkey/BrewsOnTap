@@ -15,46 +15,172 @@
 @sidebar-color: #ecd7ac;
 @sidebar-background-color: #686765;
 
-.fullscreenMixin {
-  #ontap {
-    color: @headline-color;
-    font-family: "OstrichSansMedium";
-    font-weight: normal;
-    font-size: 49px;
-    margin-top: 0;
+/* Override margin on navbar */
+.navbar {
+	margin-bottom: 0;
+}
 
+/* Base Styles for All Views: Browser/Full Screen/Print */
+
+h1 {
+  color: @headline-color;
+  font-family: "OstrichSansMedium";
+  font-weight: normal;
+  font-size: 48px;
+  padding: 0;
+  margin: 0;
+
+}
+
+h2 {
+  font-family: "OstrichSansBlack";
+  font-weight: normal;
+  font-size: 42px;
+  padding: 0;
+  margin: 0;
+  color: #918f8b;
+}
+
+#logo-header {
+	height: 130px;
+	background: #000;
+	position: relative;
+
+	h1 {
+		color: #fff;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		font-size: 100px
+	}
+	#logo {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+}
+
+.price {
+		font-size: 18px;
+		color: #918f8b;
+		
+		span {
+			font-family: 'OstrichSansBlack';
+			font-size: 22px;
+			color: #000;
+		}
+}
+	
+.form-cancel {
+  margin-top: 10px;
+}
+
+
+#ontap {
+    table {
+    	margin: 0 0 50px 0;
+    }
+    .horizontal-wordmark-img {
+   		width: 500px;
+  	}
+    
+    .name {
+		font-family: 'OstrichSansMedium';
+    	font-weight: normal;
+    	font-size: 36px;
+    	color: @headline-color;
+    	padding: 0 0 0 20px;
+	}
+	
+	thead {
+		background-color: #918f8b;
+	}
+	
+	th {
+		text-transform: uppercase;
+		color: #fff;
+		vertical-align: middle;
+	   	
+	   	&.th-with-subtitle {    
+    		
+    		.th-subtitle {
+      			font-size: 12px;
+      			font-weight: normal;
+   			}
+  		}
+	}
+	th:first-child {
+		padding: 0 0 0 20px;
+	}
+	td {
+		vertical-align: middle;
+	}
+	
+}
+
+/////////////////////////////////
+// Footer
+/////////////////////////////////
+
+#footer {
+  font-size: 14px;
+  color: white;
+  background-color: @robot-dark-grey;
+  padding: 10px 0 10px 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  p {
+    color: white;
+    margin: 0;
+  }
+}
+
+
+/* Full Screen Overrides */
+
+.fullscreenMixin {
+  h2 {
+      color: #918f8b;
+      font-size: 62px;
+    }
+  p {
+      font-family: "Helvetica", Arial, sans-serif;
+      font-size: 28px;
+    }
+  .price {
+		font-size: 28px;
+		span {
+			font-size: 42px;	
+		}
+	}
+  #footer {
+		p {
+			font-size: 18px;
+		}
+	}
+	
+  #ontap {
+	font-size: 26px;
+	 .name {
+    	font-size: 44px;
+    	font-family: 'OstrichSansBlack';
+	}
+	
     th {
-      letter-spacing: 3px;
-      padding-bottom: 25px;
-      &.th-with-subtitle {
-        padding-bottom: 8px;
-        line-height: 35px;
-        .th-subtitle {
-          font-size: 32px;
-          font-weight: normal;
-        }
-      }
+		font-size: 24px;
+      	
+      	&.th-with-subtitle {
+			.th-subtitle {
+          		font-size: 20px;
+        	}
+      	}
     }
 
     tr {
       color: @robot-dark-grey;
     }
-    h1 {
-      padding-top: 20px;
-      font-size: 82px;
-    }
-    h2 {
-      color: @robot-dark-grey;
-      font-size: 49px;
-      font-weight: bold;
-      font-family: "OstrichSansMedium";
-      letter-spacing: 3px;
-      padding-top: 0px;
-    }
-    p {
-      font-family: "Helvetica", Arial, sans-serif;
-      font-size: 28px;
-    }
+	
   }
   .hide-fullscreen {
     display: none;
@@ -78,56 +204,43 @@ html:-ms-fullscreen {
   width: 100%; /* needed to center contents in IE */
 }
 
-h1 {
-  color: @headline-color;
-  font-family: "OstrichSansMedium";
-  font-weight: normal;
-  font-size: 49px;
-  padding-bottom: 0px;
-  padding-top: 0;
-  margin-top: 0;
-  margin-bottom: 0;
 
+@media print {
+
+
+body {
+	margin: 0 !important;
+	padding: 0 !important;
 }
 
-#ontap {
-  .horizontal-wordmark-img {
-    width: 500px;
-  }
+@page {
+	margin: 0 !important;
+	padding: 0 !important;
 }
+* {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+   } 
+#logo-header {
 
-.form-cancel {
-  margin-top: 10px;
+	background: #000 !important;
+
+	h1 {
+		color: #fff !important;
+
+		}
+	}
+.table {
+    	td,
+    	th {
+     		 background-color: #fff !important;
+    	}
+    	thead th,
+    	thead th .th-subtitle {
+			background-color: #918f8b !important;
+			color: #fff !important;
+
+		}
+    
 }
-
-#ontap th {
-  padding-bottom: 25px;
-  &.th-with-btn {
-    padding-bottom: 5px;
-  }
-  &.th-with-subtitle {
-    padding-bottom: 8px;
-    .th-subtitle {
-      font-size: 12px;
-      font-weight: normal;
-    }
-  }
-}
-
-/////////////////////////////////
-// Footer
-/////////////////////////////////
-
-#footer {
-  font-size: 14px;
-  color: white;
-  background-color: @robot-dark-grey;
-  padding: 10px 0 10px 0px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  p {
-    color: white;
-    margin: 0;
-  }
 }

@@ -1,7 +1,7 @@
 <template name="ontap">
-    <div id="ontap" class="container-fluid">
-        <div class="col-md-12">
-            <img class="horizontal-wordmark-img" src="http://i.imgur.com/0dvAMM5.jpg">
+    <div id="ontap">
+            <div id="logo-header"><h1>Beer Menu</h1><img id="logo" src="assets/images/logo_tin_whiskers.svg" height="90" width="400" /></div>
+            
             <table class="table table-striped">
             <thead>
                 <tr>
@@ -9,12 +9,10 @@
                     <th>Style</th>
                     <th>Stage</th>
                     <th>ABV</th>
-                    <th class="th-with-subtitle">Growler<div class="th-subtitle">Glass/Fill</div></th>
-                    <th>Pint</th>
-                    <th>10oz</th>
-                    <th>4oz</th>
-                    <th class="hide-fullscreen">On Tap?</th>
-                    <th class="hide-fullscreen th-with-btn">
+                    <th class="th-with-subtitle">Growler<div class="th-subtitle">Container &#8226; Fill</div></th>
+                    <th class="th-with-subtitle">Glass<div class="th-subtitle">Pint &#8226; 10oz &#8226; 4oz</div></th>
+                    <th class="hide-fullscreen hidden-print">On Tap?</th>
+                    <th class="hide-fullscreen hidden-print th-with-btn">
                         <button href="#" class="btn btn-default navbar-btn fullscreen">
                             <i class="fa fa-arrows-alt"></i>
                         </button>           
@@ -24,28 +22,33 @@
             <tbody>
                 {{#each beers}}
                 <tr class="{{hide ontap}}">
-                    <td> {{name}}</td>
+                    <td class="name"> {{name}}</td>
                     <td> {{style}}</td>
                     <td> {{stage}} </td>
                     <td> {{abv}}</td>
-                    <td> {{growler_price}} / {{growler_fill}}</td>
-                    <td> {{pint_price}}</td>
-                    <td> {{tulip_price}}</td>
-                    <td> {{taster_price}}</td>
-                    <td class="hide-fullscreen"> {{ontap}}</td>
-                    <td class="hide-fullscreen"><button href="/edit_beer/{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button></td>
+                    <td class="price"> <span>${{growler_price}}</span> &#8226; <span>${{growler_fill}}</span></td>
+                    <td class="price"> <span>${{pint_price}}</span> &#8226; <span>${{tulip_price}}</span> &#8226; <span>${{taster_price}}</span></td>
+                    <td class="hide-fullscreen hidden-print"> {{ontap}}</td>
+                    <td class="hide-fullscreen hidden-print"><button href="/edit_beer/{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button></td>
                 </tr>
                 {{/each}}
             </tbody>
             </table>        
-            <h2> Flights </h2>
-            <p>Any 4 beers in 4oz tasting glasses: $8.00 </p>
-            <h2> Beverages </h2>
-            <p>Bottled Water 20oz: $2.00</p>
-            <p>Can of Coke, Diet Coke, Mountain Dew, A&W: 1.00</p>
-        </div>
-
+    </div> <!-- end #ontap -->
+    
+    <div class="col-md-6">
+		    
+            <h2>Other Beverages</h2>
+            <p class="price">Bottled Water 20oz: <span>$2.00</span></p>
+            <p class="price">Can of Coke, Diet Coke, Mountain Dew, A&W: <span>$1.00</span></p>
     </div>
+     <div class="col-md-6">
+		    <h2>Beer Flights</h2>
+            <p class="price">Any 4 beers in 4oz tasting glasses: <span>$8.00</span></p>
+           
+    </div>
+
+    
     <div id ="footer">
         <div class="col-md-6">
              <p>Drink Responsibly</p>
