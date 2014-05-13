@@ -15,6 +15,11 @@
 @sidebar-color: #ecd7ac;
 @sidebar-background-color: #686765;
 
+@fullscreen-padding-top: 50px;
+@fullscreen-padding-left: 50px;
+@fullscreen-padding-right: 50px;
+@fullscreen-padding-bottom: 50px;
+
 /* Override margin on navbar */
 .navbar {
   margin-bottom: 0;
@@ -46,21 +51,19 @@ p {
 }
 
 #logo-header {
-  height: 130px;
   background: #000;
   position: relative;
 
   h1 {
     color: #fff;
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    padding-top: 20px;   //var?
+    padding-left: 20px;  //var?
     font-size: 100px
   }
   #logo {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 20px; //var?
+    right: 20px; //var?
     height: 90px;
     width: 400px;
   }
@@ -146,6 +149,16 @@ p {
 /* Full Screen Overrides */
 
 .fullscreenMixin {
+  #logo-header {
+    h1 {
+      padding-top: @fullscreen-padding-top;
+      padding-left: @fullscreen-padding-left;
+    }
+    #logo {
+      top: @fullscreen-padding-top;
+      right: @fullscreen-padding-right;
+    }
+  }
   h2 {
       color: #918f8b;
       font-size: 62px;
@@ -164,6 +177,7 @@ p {
     line-height: 42px;
   }
   #footer {
+    padding-bottom: @fullscreen-padding-bottom;
     p {
       font-size: 26px;
     }
@@ -171,11 +185,15 @@ p {
   
   #ontap {
   font-size: 26px;
-   .name {
-      font-size: 44px;
-      font-family: 'OstrichSansBlack';
-  }
-  
+    .name {
+        font-size: 44px;
+        font-family: 'OstrichSansBlack';
+    }
+
+    th:first-child {
+      padding: 0 0 0 @fullscreen-padding-left;
+    }
+
     th {
     font-size: 24px;
         
@@ -189,7 +207,17 @@ p {
     tr {
       color: @robot-dark-grey;
     }
+    td:first-child {
+      padding: 0 0 0 @fullscreen-padding-left;
+    }
   
+  }
+  .other-items {
+    padding-left: @fullscreen-padding-left;
+  }
+  #footer {
+    padding-left: @fullscreen-padding-left;
+    padding-right: @fullscreen-padding-right;
   }
   .hidden-fullscreen, 
   .hidden-print {
