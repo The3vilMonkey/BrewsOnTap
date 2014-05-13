@@ -17,7 +17,7 @@
 
 /* Override margin on navbar */
 .navbar {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* Base Styles for All Views: Browser/Full Screen/Print */
@@ -42,41 +42,41 @@ h2 {
 }
 
 p {
-	margin: 0;
+  margin: 0;
 }
 
 #logo-header {
-	height: 130px;
-	background: #000;
-	position: relative;
+  height: 130px;
+  background: #000;
+  position: relative;
 
-	h1 {
-		color: #fff;
-		position: absolute;
-		top: 20px;
-		left: 20px;
-		font-size: 100px
-	}
-	#logo {
-		position: absolute;
-		top: 20px;
-		right: 20px;
-		height: 90px;
-		width: 400px;
-	}
+  h1 {
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 100px
+  }
+  #logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 90px;
+    width: 400px;
+  }
 }
 
 .price {
-		font-size: 18px;
-		color: #918f8b;
-		
-		span {
-			font-family: 'OstrichSansBlack';
-			font-size: 22px;
-			color: #000;
-		}
+    font-size: 18px;
+    color: #918f8b;
+    
+    span {
+      font-family: 'OstrichSansBlack';
+      font-size: 22px;
+      color: #000;
+    }
 }
-	
+  
 .form-cancel {
   margin-top: 10px;
 }
@@ -84,44 +84,44 @@ p {
 
 #ontap {
     table {
-    	margin: 0 0 50px 0;
+      margin: 0 0 50px 0;
     }
     .horizontal-wordmark-img {
-   		width: 500px;
-  	}
+      width: 500px;
+    }
     
     .name {
-		font-family: 'OstrichSansMedium';
-    	font-weight: normal;
-    	font-size: 36px;
-    	color: @headline-color;
-    	padding: 0 0 0 20px;
-	}
-	
-	thead {
-		background-color: #918f8b;
-	}
-	
-	th {
-		text-transform: uppercase;
-		color: #fff;
-		vertical-align: middle;
-	   	
-	   	&.th-with-subtitle {    
-    		
-    		.th-subtitle {
-      			font-size: 12px;
-      			font-weight: normal;
-   			}
-  		}
-	}
-	th:first-child {
-		padding: 0 0 0 20px;
-	}
-	td {
-		vertical-align: middle;
-	}
-	
+    font-family: 'OstrichSansMedium';
+      font-weight: normal;
+      font-size: 36px;
+      color: @headline-color;
+      padding: 0 0 0 20px;
+  }
+  
+  thead {
+    background-color: #918f8b;
+  }
+  
+  th {
+    text-transform: uppercase;
+    color: #fff;
+    vertical-align: middle;
+      
+      &.th-with-subtitle {    
+        
+        .th-subtitle {
+            font-size: 12px;
+            font-weight: normal;
+        }
+      }
+  }
+  th:first-child {
+    padding: 0 0 0 20px;
+  }
+  td {
+    vertical-align: middle;
+  }
+  
 }
 
 /////////////////////////////////
@@ -155,43 +155,44 @@ p {
       font-size: 28px;
     }
   .price {
-		font-size: 28px;
-		span {
-			font-size: 42px;	
-		}
-	}
-	.col-md-6 .price span {
-		line-height: 42px;
-	}
+    font-size: 28px;
+    span {
+      font-size: 42px;  
+    }
+  }
+  .col-md-6 .price span {
+    line-height: 42px;
+  }
   #footer {
-		p {
-			font-size: 26px;
-		}
-	}
-	
+    p {
+      font-size: 26px;
+    }
+  }
+  
   #ontap {
-	font-size: 26px;
-	 .name {
-    	font-size: 44px;
-    	font-family: 'OstrichSansBlack';
-	}
-	
+  font-size: 26px;
+   .name {
+      font-size: 44px;
+      font-family: 'OstrichSansBlack';
+  }
+  
     th {
-		font-size: 24px;
-      	
-      	&.th-with-subtitle {
-			.th-subtitle {
-          		font-size: 20px;
-        	}
-      	}
+    font-size: 24px;
+        
+        &.th-with-subtitle {
+      .th-subtitle {
+              font-size: 20px;
+          }
+        }
     }
 
     tr {
       color: @robot-dark-grey;
     }
-	
+  
   }
-  .hide-fullscreen {
+  .hidden-fullscreen, 
+  .hidden-print {
     display: none;
   }
 }
@@ -217,124 +218,251 @@ html:-ms-fullscreen {
 @media print {
 
 
-body {
-	margin: 0 !important;
-	padding: 0 !important;
-}
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-@page {
-	margin: 0 !important;
-	padding: 0 !important;
-}
-* {
+  @page {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  * {
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
    } 
-#logo-header {
 
-	background: #000 !important;
+  #logo-header {
+  background: #000 !important;
+  h1 {
+    color: #fff !important;
 
-	h1 {
-		color: #fff !important;
-
-		}
-	}
-.table {
-    	td,
-    	th {
-     		 background-color: #fff !important;
-    	}
-    	thead th,
-    	thead th .th-subtitle {
-			background-color: #918f8b !important;
-			color: #fff !important;
-
-		}
-    
-}
-.col-md-6 {
-	width: 50%;
-	float: left;
-}
-#footer {
-	position: static;
-	clear: left;
-}
-
-
-/* Sizes for 4x6 */
-
-h1 {
-  font-size: 24px;
-}
-
-h2 {
-  font-size: 20px;
-}
-
-p {
-	font-size: 8px;
-}
-#logo-header {
-	height: 60px;
-
-	h1 {
-		top: 10px;
-		left: 10px;
-		font-size: 50px
-	}
-	#logo {
-		
-		top: 10px;
-		right: 10px;
-		height: 45px;
-		width: 200px;
-	}
-}
-
-.price {
-		font-size: 8px;
-		
-		span {
-			font-size: 10px;
-		}
-}
-
-#ontap {
-    
-    font-size: 10px;
-    
-    .name {
-    	font-size: 18px;
-	}
-	
-	table {
-    	margin: 0 0 10px 0;
     }
-	
-	th {
+  }
+  .table {
+        td,
+        th {
+           background-color: #fff !important;
+        }
+        thead th,
+        thead th .th-subtitle {
+        background-color: #918f8b !important;
+        color: #fff !important;
 
-	   	&.th-with-subtitle {    
-    		
-    		.th-subtitle {
-      			font-size: 8px;
-   			}
-  		}
-	}
-	
-	
+      }
+      
+  }
+  .col-md-6 {
+    width: 50%;
+    float: left;
+  }
+  #footer {
+    position: static;
+    clear: left;
+  }
+
+
+  /* Sizes for 4x6 */
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 8px;
+  }
+  #logo-header {
+    height: 60px;
+
+    h1 {
+      top: 10px;
+      left: 10px;
+      font-size: 50px
+    }
+    #logo {
+      
+      top: 10px;
+      right: 10px;
+      height: 45px;
+      width: 200px;
+    }
+  }
+
+  .price {
+      font-size: 8px;
+      
+      span {
+        font-size: 10px;
+      }
+  }
+
+  #ontap {
+      
+      font-size: 10px;
+      
+      .name {
+        font-size: 18px;
+    }
+    
+    table {
+        margin: 0 0 10px 0;
+      }
+    
+    th {
+
+        &.th-with-subtitle {    
+          
+          .th-subtitle {
+              font-size: 8px;
+          }
+        }
+    }
+    
+    
+  }
+
+  /////////////////////////////////
+  // Footer
+  /////////////////////////////////
+
+  #footer {
+    font-size: 8px;
+    
+    .pull-right {
+      float: right !important;
+      text-align: right;
+    }
+  }
 }
 
-/////////////////////////////////
-// Footer
-/////////////////////////////////
+  /////////////////////////////////
+  // Fake 6x4
+  /////////////////////////////////
 
-#footer {
-  font-size: 8px;
-  
-  .pull-right {
-  	float: right !important;
-  	text-align: right;
+html.print {
+  width: 6in;
+  .hidden-print {
+    display: none;
   }
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  @page {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+   } 
+
+  #logo-header {
+  background: #000 !important;
+  h1 {
+    color: #fff !important;
+
+    }
+  }
+  .table {
+        td,
+        th {
+           background-color: #fff !important;
+        }
+        thead th,
+        thead th .th-subtitle {
+        background-color: #918f8b !important;
+        color: #fff !important;
+
+      }
+      
+  }
+  .col-md-6 {
+    width: 50%;
+    float: left;
+  }
+  #footer {
+    position: static;
+    clear: left;
+  }
+
+
+  /* Sizes for 4x6 */
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 8px;
+  }
+  #logo-header {
+    height: 60px;
+
+    h1 {
+      top: 10px;
+      left: 10px;
+      font-size: 50px
+    }
+    #logo {
+      
+      top: 10px;
+      right: 10px;
+      height: 45px;
+      width: 200px;
+    }
+  }
+
+  .price {
+      font-size: 8px;
+      
+      span {
+        font-size: 10px;
+      }
+  }
+
+  #ontap {
+      
+      font-size: 10px;
+      
+      .name {
+        font-size: 18px;
+    }
+    
+    table {
+        margin: 0 0 10px 0;
+      }
+    
+    th {
+
+        &.th-with-subtitle {    
+          
+          .th-subtitle {
+              font-size: 8px;
+          }
+        }
+    }
+    
+    
+  }
+
+  /////////////////////////////////
+  // Footer
+  /////////////////////////////////
+
+  #footer {
+    font-size: 8px;
+    
+    .pull-right {
+      float: right !important;
+      text-align: right;
+    }
   }
 }

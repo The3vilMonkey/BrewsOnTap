@@ -11,11 +11,14 @@
                     <th>ABV</th>
                     <th class="th-with-subtitle">Growler<div class="th-subtitle">Container &#8226; Fill</div></th>
                     <th class="th-with-subtitle">Glass<div class="th-subtitle">Pint &#8226; 10oz &#8226; 4oz</div></th>
-                    <th class="hide-fullscreen hidden-print">On Tap?</th>
-                    <th class="hide-fullscreen hidden-print th-with-btn">
+                    <th class="hidden-fullscreen hidden-print">On Tap?</th>
+                    <th class="hidden-fullscreen hidden-print th-with-btn">
                         <button href="#" class="btn btn-default navbar-btn fullscreen">
                             <i class="fa fa-arrows-alt"></i>
-                        </button>           
+                        </button>
+                        <button href="#" class="btn btn-default navbar-btn print">
+                            <i class="fa fa-print"></i>
+                        </button>         
                     </th>
                 </tr>
             </thead>
@@ -28,8 +31,8 @@
                     <td> {{abv}}</td>
                     <td class="price"> <span>${{growler_price}}</span> &#8226; <span>${{growler_fill}}</span></td>
                     <td class="price"> <span>${{pint_price}}</span> &#8226; <span>${{tulip_price}}</span> &#8226; <span>${{taster_price}}</span></td>
-                    <td class="hide-fullscreen hidden-print"> {{ontap}}</td>
-                    <td class="hide-fullscreen hidden-print"><button href="/edit_beer/{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button></td>
+                    <td class="hidden-fullscreen hidden-print"> {{ontap}}</td>
+                    <td class="hidden-fullscreen hidden-print"><button href="/edit_beer/{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button></td>
                 </tr>
                 {{/each}}
             </tbody>

@@ -11,6 +11,9 @@ Template.ontap.events
         href = $(evt.target).attr('href')
         Router.go(href)
 
+    "click button.print": (evt) ->
+        $("html").addClass("print");
+
     "click button.fullscreen": (evt) ->
         evt.preventDefault()
         toggleFullScreen = ->
