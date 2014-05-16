@@ -5,7 +5,7 @@
             <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Beer</th>
+                    <th class="beername">Beer</th>
                     <th>Style</th>
                     <th>Stage</th>
                     <th>ABV</th>
@@ -32,7 +32,11 @@
                     <td class="price"> <span>${{growler_price}}</span> &#8226; <span>${{growler_fill}}</span></td>
                     <td class="price"> <span>${{pint_price}}</span> &#8226; <span>${{tulip_price}}</span> &#8226; <span>${{taster_price}}</span></td>
                     <td class="hidden-fullscreen hidden-print"> {{ontap}}</td>
-                    <td class="hidden-fullscreen hidden-print"><button href="/edit_beer/{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button></td>
+                    <td class="hidden-fullscreen hidden-print">
+                        {{#if isInRole 'userCanEdit'}}
+                            <button href="/edit_beer/{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button>
+                        {{/if}}
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
@@ -41,15 +45,5 @@
     <div class="other-items">
 	    <h2>Beer Flights</h2>
         <p class="price">Any 4 beers in 4oz tasting glasses: <span>$8.00</span></p>
-    </div>
-    <div id="footer">
-        <div class="col-md-4">
-             <p>Please drink responsibly.</p>
-        </div>
-        <div class="col-md-8">
-            <div class="pull-right">
-                <p>Access this menu from anywhere @ <strong>ontap.twbrewing.com</strong></p>
-            </div>
-        </div>
     </div>
 </template>

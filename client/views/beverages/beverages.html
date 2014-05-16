@@ -23,25 +23,19 @@
             <tbody>
                 {{#each beverages}}
                 <tr class="{{show isAvailable}}">
-                    <td> {{name}}</td>
+                    <td class="name"> {{name}}</td>
                     <td> {{description}}</td>
                     <td> {{size}}</td>
                     <td> {{price}} </td>
                     <td class="hidden-fullscreen hidden-print"> {{isAvailable}}</td>
-                    <td class="hidden-fullscreen hidden-print"><button href="/edit_beverage/{{_id}}" class="btn btn-default navbar-btn edit">Edit</button></td>
+                    <td class="hidden-fullscreen hidden-print">
+                        {{#if userCanEdit}}
+                            <button href="/edit_beverage/{{_id}}" class="btn btn-default navbar-btn edit">Edit</button>
+                        {{/if}}
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
             </table>        
     </div> <!-- end #ontap -->
-    <div id="footer">
-        <div class="col-md-4">
-             <p>Excellent choices for a designated driver.</p>
-        </div>
-        <div class="col-md-8">
-            <div class="pull-right">
-                <p>Access this menu from anywhere @ <strong>ontap.twbrewing.com</strong></p>
-            </div>
-        </div>
-    </div>
 </template>

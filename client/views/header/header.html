@@ -14,13 +14,18 @@
 
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            {{#if AddBeerBtn}}
-              <button href="/add_beer" class="btn btn-default navbar-btn"> Add Beer</button>
+            {{#if userCanEdit}}
+              {{#if AddBeerBtn}}
+                <button href="/add_beer" class="btn btn-default navbar-btn"> Add Beer</button>
+              {{/if}}
+              {{#if AddBevBtn}}
+                <button href="/add_beverage" class="btn btn-default navbar-btn"> Add Beverage</button>
+              {{/if}}
             {{/if}}
-            {{#if AddBevBtn}}
-              <button href="/add_beverage" class="btn btn-default navbar-btn"> Add Beverage</button>
+
+            {{#if isInRole 'admin'}}
+              <button href="/admin" class="btn btn-default navbar-btn"> Admin</button>
             {{/if}}
-            <button href="/admin" class="btn btn-default navbar-btn"> Admin</button>
             <ul class="nav navbar-nav navbar-right">
               {{> loginButtons}}
             </ul>
