@@ -15,3 +15,6 @@ Template.header.events
 
 Template.header.AddBeerBtn = () ->
     return Session.get('AddBeerBtn')
+
+Template.header.AddBevBtn = () ->
+    return Session.get('AddBevBtn')

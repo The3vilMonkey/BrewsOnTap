@@ -7,3 +7,9 @@ Meteor.publish('beers', ->
     # Comments.find(query)
     Beers.find({})
 )
+
+Meteor.publish('beverages', ->
+    # Comments.find(query)
+    Beverages.find({})
+)
+

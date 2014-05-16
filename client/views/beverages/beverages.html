@@ -1,0 +1,47 @@
+<template name="beverages">
+    <div id="beverages" class="drink-menu">
+            <div id="logo-header"><h1>Beverage Menu</h1><img id="logo" src="assets/images/logo_tin_whiskers.svg" /></div>
+            
+            <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Beverage(s)</th>
+                    <th>Description</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th class="hidden-fullscreen hidden-print">Available?</th>
+                    <th class="hidden-fullscreen hidden-print th-with-btn">
+                        <button href="#" class="btn btn-default navbar-btn fullscreen">
+                            <i class="fa fa-arrows-alt"></i>
+                        </button>
+                        <button href="#" class="btn btn-default navbar-btn print">
+                            <i class="fa fa-print"></i>
+                        </button>         
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each beverages}}
+                <tr class="{{show isAvailable}}">
+                    <td> {{name}}</td>
+                    <td> {{description}}</td>
+                    <td> {{size}}</td>
+                    <td> {{price}} </td>
+                    <td class="hidden-fullscreen hidden-print"> {{isAvailable}}</td>
+                    <td class="hidden-fullscreen hidden-print"><button href="/edit_beverage/{{_id}}" class="btn btn-default navbar-btn edit">Edit</button></td>
+                </tr>
+                {{/each}}
+            </tbody>
+            </table>        
+    </div> <!-- end #ontap -->
+    <div id="footer">
+        <div class="col-md-4">
+             <p>Excellent choices for a designated driver.</p>
+        </div>
+        <div class="col-md-8">
+            <div class="pull-right">
+                <p>Access this menu from anywhere @ <strong>ontap.twbrewing.com</strong></p>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,6 +1,4 @@
 
-
-
 addToolbarButtons = (arrayOfButtons) ->
   for button in arrayOfButtons
     Session.set(button, true)
@@ -14,7 +12,7 @@ Router.configure
 
 Router.map ->
   
-  @route "ontap",
+  @route "home",
     path: "/"
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
@@ -41,6 +39,33 @@ Router.map ->
       Session.set( 'editingBeerId' , beerId ) 
     onStop: ->
       Session.set( 'editingBeerId' , false )
+
+
+
+
+  @route "beverages",
+    path: "/beverages"
+    waitOn : Meteor.subscribe('beverages')
+    onBeforeAction: ->
+      addToolbarButtons(['AddBevBtn'])
+    onStop: ->
+      removeToolbarButtons(['AddBevBtn'])
+
+  @route "add_beverage",
+    path: "/add_beverage"
+    waitOn : Meteor.subscribe('beverages')
+
+  @route "edit_beverage",
+    path: "/edit_beverage/:id"
+    waitOn : Meteor.subscribe('beverages')
+    onBeforeAction: ->
+      beverageId = this.params.id
+      Session.set( 'editingBeverageId' , beverageId ) 
+    onStop: ->
+      Session.set( 'editingBeverageId' , false )
+
+
+      
 
   @route "admin",
     path: "/admin"

@@ -1,5 +1,5 @@
 <template name="ontap">
-    <div id="ontap">
+    <div id="ontap" class="drink-menu">
             <div id="logo-header"><h1>Beer Menu</h1><img id="logo" src="assets/images/logo_tin_whiskers.svg" /></div>
             
             <table class="table table-striped">
@@ -24,7 +24,7 @@
             </thead>
             <tbody>
                 {{#each beers}}
-                <tr class="{{hide ontap}}">
+                <tr class="{{show ontap}}">
                     <td class="name"> {{name}}</td>
                     <td> {{style}}</td>
                     <td> {{stage}} </td>
@@ -39,17 +39,8 @@
             </table>        
     </div> <!-- end #ontap -->
     <div class="other-items">
-        <div class="col-md-6">
-    		    
-                <h2>Other Beverages</h2>
-                <p class="price">Bottled Water 20oz: <span>$2.00</span></p>
-                <p class="price">Can of Coke, Diet Coke, Mountain Dew, A&W: <span>$1.00</span></p>
-        </div>
-         <div class="col-md-6">
-    		    <h2>Beer Flights</h2>
-                <p class="price">Any 4 beers in 4oz tasting glasses: <span>$8.00</span></p>
-               
-        </div>
+	    <h2>Beer Flights</h2>
+        <p class="price">Any 4 beers in 4oz tasting glasses: <span>$8.00</span></p>
     </div>
     <div id="footer">
         <div class="col-md-4">

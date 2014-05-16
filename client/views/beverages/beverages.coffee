@@ -1,18 +1,16 @@
-Template.ontap.beers = () ->
-    Beers.find({})
+Template.beverages.beverages = () ->
+    Beverages.find({})
 
-Template.ontap.show = (ontap) ->
-    if not ontap
+Template.beverages.show = (isAvailable) ->
+    if not isAvailable
         return "hide-fullscreen"
 
-Template.ontap.events
+Template.beverages.events
     "click button.edit": (evt) ->
         evt.preventDefault()
         href = $(evt.target).attr('href')
         Router.go(href)
 
-    "click button.print": (evt) ->
-        $("html").addClass("print");
 
     "click button.fullscreen": (evt) ->
         evt.preventDefault()
