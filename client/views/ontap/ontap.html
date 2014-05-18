@@ -1,22 +1,22 @@
 <template name="ontap">
     <div id="ontap" class="drink-menu">
-            <div id="logo-header"><h1>Beer Menu</h1><img id="logo" src="assets/images/logo_tin_whiskers.svg" /></div>
-            
+        <div id="logo-header"><h1>Beer Menu</h1><img id="logo" src="assets/images/logo_tin_whiskers.svg" /></div>
+        <div class="table-responsive">
             <table class="table table-striped">
             <thead>
                 <tr>
+                    <th class="hidden-fullscreen hidden-print">On Tap?</th>
                     <th class="beername">Beer</th>
                     <th>Style</th>
                     <th>Stage</th>
                     <th>ABV</th>
                     <th class="th-with-subtitle">Growler<div class="th-subtitle">Container &#8226; Fill</div></th>
                     <th class="th-with-subtitle">Glass<div class="th-subtitle">Pint &#8226; 10oz &#8226; 4oz</div></th>
-                    <th class="hidden-fullscreen hidden-print">On Tap?</th>
                     <th class="hidden-fullscreen hidden-print th-with-btn">
-                        <button href="#" class="btn btn-default navbar-btn fullscreen">
+                        <button href="#" class="btn btn-default navbar-btn hidden-xs fullscreen">
                             <i class="fa fa-arrows-alt"></i>
                         </button>
-                        <button href="#" class="btn btn-default navbar-btn print">
+                        <button href="#" class="btn btn-default navbar-btn hidden-xs print">
                             <i class="fa fa-print"></i>
                         </button>         
                     </th>
@@ -25,19 +25,19 @@
             <tbody>
                 {{#each beers}}
                 <tr class="{{show ontap}}">
+                    <td class="hidden-fullscreen hidden-print"> 
+                        {{#if ontap}}
+                            <span><i class="fa fa-3x fa-check-square"></i></span>
+                        {{else}}
+                            <span><i class="fa fa-3x fa-ban"></i></span>
+                        {{/if}}
+                    </td>
                     <td class="name"> {{name}}</td>
                     <td> {{style}}</td>
                     <td> {{stage}} </td>
                     <td> {{abv}}</td>
                     <td class="price"> <span>${{growler_price}}</span> &#8226; <span>${{growler_fill}}</span></td>
                     <td class="price"> <span>${{pint_price}}</span> &#8226; <span>${{tulip_price}}</span> &#8226; <span>${{taster_price}}</span></td>
-                    <td class="hidden-fullscreen hidden-print"> 
-                        {{#if ontap}}
-                            <span><i class="fa fa-check-square"></i></span>
-                        {{else}}
-                            <span><i class="fa fa-ban"></i></span>
-                        {{/if}}
-                    </td>
                     <td class="hidden-fullscreen hidden-print">
                         {{#if userCanEdit}}
                             <button href="/edit_beer/{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button>
@@ -46,7 +46,8 @@
                 </tr>
                 {{/each}}
             </tbody>
-            </table>        
+            </table>
+        </div>   
     </div> <!-- end #ontap -->
     <div class="other-items">
 	    <h2>Beer Flights</h2>
