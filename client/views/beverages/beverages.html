@@ -10,20 +10,22 @@
                     <th>Description</th>
                     <th>Size</th>
                     <th>Price</th>
-                    <th class="hidden-fullscreen hidden-print th-with-btn">
-                        <button href="#" class="btn btn-default navbar-btn hidden-xs fullscreen">
-                            <i class="fa fa-arrows-alt"></i>
-                        </button>
-                        <button href="#" class="btn btn-default navbar-btn hidden-xs print">
-                            <i class="fa fa-print"></i>
-                        </button>         
-                    </th>
+                    {{#if userCanEdit}}
+                        <th class="hidden-fullscreen hidden-print th-with-btn">
+                            <button href="#" class="btn btn-default navbar-btn hidden-xs fullscreen">
+                                <i class="fa fa-arrows-alt"></i>
+                            </button>
+                            <button href="#" class="btn btn-default navbar-btn hidden-xs print">
+                                <i class="fa fa-print"></i>
+                            </button>         
+                        </th>
+                    {{/if}}
                 </tr>
             </thead>
             <tbody>
                 {{#each beverages}}
                 <tr class="{{show isAvailable}}">
-                    <td class="hidden-fullscreen hidden-print"> 
+                    <td class="hidden-fullscreen hidden-print ontap-icon"> 
                         {{#if isAvailable}}
                             <span><i class="fa fa-3x fa-check-square"></i></span>
                         {{else}}
@@ -34,11 +36,11 @@
                     <td> {{description}}</td>
                     <td> {{size}}</td>
                     <td> {{price}} </td>
-                    <td class="hidden-fullscreen hidden-print">
-                        {{#if userCanEdit}}
-                            <button href="/edit_beverage/{{_id}}" class="btn btn-default navbar-btn edit">Edit</button>
-                        {{/if}}
-                    </td>
+                    {{#if userCanEdit}}
+                        <td class="hidden-fullscreen hidden-print">
+                                <button href="/edit_beverage/{{_id}}" class="btn btn-default navbar-btn edit">Edit</button>
+                        </td>
+                    {{/if}}
                 </tr>
                 {{/each}}
             </tbody>
