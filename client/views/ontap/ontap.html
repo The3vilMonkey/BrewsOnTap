@@ -31,9 +31,15 @@
                     <td> {{abv}}</td>
                     <td class="price"> <span>${{growler_price}}</span> &#8226; <span>${{growler_fill}}</span></td>
                     <td class="price"> <span>${{pint_price}}</span> &#8226; <span>${{tulip_price}}</span> &#8226; <span>${{taster_price}}</span></td>
-                    <td class="hidden-fullscreen hidden-print"> {{ontap}}</td>
+                    <td class="hidden-fullscreen hidden-print"> 
+                        {{#if ontap}}
+                            <span><i class="fa fa-check-square"></i></span>
+                        {{else}}
+                            <span><i class="fa fa-ban"></i></span>
+                        {{/if}}
+                    </td>
                     <td class="hidden-fullscreen hidden-print">
-                        {{#if isInRole 'userCanEdit'}}
+                        {{#if userCanEdit}}
                             <button href="/edit_beer/{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button>
                         {{/if}}
                     </td>

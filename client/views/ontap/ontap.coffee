@@ -1,9 +1,12 @@
 Template.ontap.beers = () ->
-    Beers.find({})
+    Beers.find({}, 
+        sort: 
+            ontap: -1
+    )
 
 Template.ontap.show = (ontap) ->
     if not ontap
-        return "hide-fullscreen"
+        return "hidden-fullscreen"
 
 Template.ontap.events
     "click button.edit": (evt) ->

@@ -1,9 +1,12 @@
 Template.beverages.beverages = () ->
-    Beverages.find({})
+    Beverages.find({}, 
+    	sort: 
+    		isAvailable: -1
+    )
 
 Template.beverages.show = (isAvailable) ->
     if not isAvailable
-        return "hide-fullscreen"
+        return "hidden-fullscreen"
 
 Template.beverages.events
     "click button.edit": (evt) ->
