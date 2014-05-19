@@ -1,12 +1,20 @@
 <template name="ontap">
     <div id="ontap" class="drink-menu">
-        <div id="logo-header"><h1>Beer Menu</h1><img id="logo" src="assets/images/logo_tin_whiskers.svg" /></div>
+
+        <div id="logo-header" class="container-fluid">
+            <div class="col-xs-5">
+                <h1>Beer Menu</h1>
+            </div>
+            <div class="col-xs-7">
+                <img id="logo" class="img-responsive" src="assets/images/logo_tin_whiskers.svg" />
+            </div>
+        </div>
         <div class="table-responsive">
             <table class="table table-striped">
             <thead>
                 <tr>
                     <th class="hidden-fullscreen hidden-print">On Tap?</th>
-                    <th class="beername">Beer</th>
+                    <th class="beername first-col-fullscreen">Beer</th>
                     <th>Style</th>
                     <th>Stage</th>
                     <th class="hidden-xs">ABV</th>
@@ -34,7 +42,7 @@
                             <span><i class="fa fa-3x fa-ban"></i></span>
                         {{/if}}
                     </td>
-                    <td class="name"> {{name}}</td>
+                    <td class="name first-col-fullscreen"> {{name}}</td>
                     <td> {{style}}</td>
                     <td> {{stage}} </td>
                     <td class="hidden-xs"> {{abv}}</td>

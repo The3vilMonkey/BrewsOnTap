@@ -50,10 +50,13 @@ p {
   margin: 0;
 }
 
+.login-buttons {
+  max-height: 34px;
+  display: inline-block !important;
+} 
+
 #logo-header {
   background: #000;
-  position: relative;
-
   h1 {
     color: #fff;
     padding-top: 20px;   //var?
@@ -61,11 +64,8 @@ p {
     font-size: 100px
   }
   #logo {
-    position: absolute;
-    top: 20px; //var?
-    right: 20px; //var?
-    height: 90px;
-    width: 400px;
+    max-height: 120px;
+    padding-top: 10px;
   }
 }
 
@@ -86,45 +86,44 @@ p {
 
 
 .drink-menu {
-    table {
-      margin: 0 0 50px 0;
-    }
-    .horizontal-wordmark-img {
-      width: 500px;
+  table {
+    margin: 0 0 50px 0;
+    thead {
+      background-color: #918f8b;
     }
     
-    .name {
-    font-family: 'OstrichSansMedium';
-      font-weight: normal;
-      font-size: 36px;
-      color: @headline-color;
+    th {
+      text-transform: uppercase;
+      color: #fff;
+      vertical-align: middle !important;
+        
+        &.th-with-subtitle {    
+          
+          .th-subtitle {
+              font-size: 12px;
+              font-weight: normal;
+          }
+        }
+    }
+    th:first-child {
+      padding-left: 20px;
+    }
+    td {
+      vertical-align: middle !important;
+    }
+  }
+  .horizontal-wordmark-img {
+    width: 500px;
+  }
+  
+  .name {
+  font-family: 'OstrichSansMedium';
+    font-weight: normal;
+    font-size: 36px;
+    color: @headline-color;
   }
   .ontap-icon {
     text-align: center;
-  }
-  
-  thead {
-    background-color: #918f8b;
-  }
-  
-  th {
-    text-transform: uppercase;
-    color: #fff;
-    vertical-align: middle;
-      
-      &.th-with-subtitle {    
-        
-        .th-subtitle {
-            font-size: 12px;
-            font-weight: normal;
-        }
-      }
-  }
-  th:first-child {
-    padding-left: 20px;
-  }
-  td {
-    vertical-align: middle;
   }
   
 }
@@ -154,11 +153,10 @@ p {
   #logo-header {
     h1 {
       padding-top: @fullscreen-padding-top;
-      padding-left: @fullscreen-padding-left;
     }
     #logo {
-      top: @fullscreen-padding-top;
-      right: @fullscreen-padding-right;
+      max-height: 140px;
+      padding-top: @fullscreen-padding-top;
     }
   }
   h2 {
@@ -186,7 +184,7 @@ p {
         font-family: 'OstrichSansBlack';
     }
 
-    th:first-child {
+    .first-col-fullscreen {
       padding-left: @fullscreen-padding-left;
     }
 
@@ -203,12 +201,9 @@ p {
     tr {
       color: @robot-dark-grey;
     }
-    td:first-child {
-      padding-left: @fullscreen-padding-left;
-    }
     td {
       line-height: 1.2;
-      vertical-align: middle;
+      vertical-align: middle !important;
     }
   
   }
@@ -275,7 +270,7 @@ html:-ms-fullscreen {
         td,
         th {
            background-color: #fff !important;
-           vertical-align: middle;
+           vertical-align: middle !important;
         }
         thead th,
         thead th .th-subtitle {
@@ -308,19 +303,13 @@ html:-ms-fullscreen {
     font-size: 8px;
   }
   #logo-header {
-    height: 60px;
-
     h1 {
       top: 10px;
       left: 10px;
       font-size: 50px
     }
     #logo {
-      
-      top: 10px;
-      right: 10px;
-      height: 45px;
-      width: 200px;
+      max-height: 110px;
     }
   }
 
@@ -405,7 +394,7 @@ html.print {
         td,
         th {
            background-color: #fff !important;
-           vertical-align: middle;
+           vertical-align: middle !important;
         }
         thead th,
         thead th .th-subtitle {
@@ -444,13 +433,6 @@ html.print {
       top: 10px;
       left: 10px;
       font-size: 50px
-    }
-    #logo {
-      
-      top: 10px;
-      right: 10px;
-      height: 45px;
-      width: 200px;
     }
   }
 
