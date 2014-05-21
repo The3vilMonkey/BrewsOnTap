@@ -20,6 +20,12 @@
 @fullscreen-padding-right: 50px;
 @fullscreen-padding-bottom: 50px;
 
+
+.clear { 
+  clear: both; 
+  height: 60px; 
+}
+
 /* Override margin on navbar */
 .navbar {
   margin-bottom: 0;
@@ -107,6 +113,7 @@ p {
     }
     th:first-child {
       padding-left: 20px;
+      text-align: center;
     }
     td {
       vertical-align: middle !important;
@@ -125,13 +132,10 @@ p {
   .ontap-icon {
     text-align: center;
   }
-  
 }
-
-/////////////////////////////////
-// Footer
-/////////////////////////////////
-
+#other-items {
+  padding-left: 30px;
+}
 #footer {
   font-size: 18px;
   color: white;
@@ -207,7 +211,7 @@ p {
     }
   
   }
-  .other-items {
+  #other-items {
     padding-left: @fullscreen-padding-left;
   }
   #footer {

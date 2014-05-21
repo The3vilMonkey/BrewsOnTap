@@ -11,8 +11,15 @@ Router.configure
   layoutTemplate: "layout"
 
 Router.map ->
-  
+
   @route "home",
+    path: "/home"
+    onBeforeAction: ->
+      addToolbarButtons(['AddBeerBtn'])
+    onStop: ->
+      removeToolbarButtons(['AddBeerBtn'])
+  
+  @route "ontap",
     path: "/"
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
