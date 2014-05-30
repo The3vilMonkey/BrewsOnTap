@@ -21,7 +21,7 @@
                     <th class="th-with-subtitle hidden-xs">Growler<div class="th-subtitle">Container &#8226; Fill</div></th>
                     <th class="th-with-subtitle hidden-xs">Glass<div class="th-subtitle">Pint &#8226; 10oz &#8226; 4oz</div></th>
                     {{#if userCanEdit}}
-                        <th class="hidden-fullscreen hidden-print th-with-btn">
+                        <th class="hidden-fullscreen hidden-print hidden-xs th-with-btn">
                             <button href="#" class="btn btn-default navbar-btn hidden-xs fullscreen">
                                 <i class="fa fa-arrows-alt"></i>
                             </button>
@@ -53,7 +53,7 @@
                         <span>${{pint_price}}</span> &#8226; <span>${{tulip_price}}</span> &#8226; <span>${{taster_price}}</span>
                     </td>
                     {{#if userCanEdit}}
-                        <td class="hidden-fullscreen hidden-print">
+                        <td class="hidden-fullscreen hidden-xs hidden-print">
                                 <button href="/edit_beer/{{_id}}" class="btn btn-default navbar-btn edit"> Edit Beer</button>
                         </td>
                     {{/if}}
