@@ -16,7 +16,7 @@
                     <th class="hidden-fullscreen hidden-print">On Tap?</th>
                     <th class="beername first-col-fullscreen">Beer</th>
                     <th>Style</th>
-                    <th>Stage</th>
+                    <th class="hidden-xs">Stage</th>
                     <th class="hidden-xs">ABV</th>
                     <th class="th-with-subtitle hidden-xs">Growler<div class="th-subtitle">Container &#8226; Fill</div></th>
                     <th class="th-with-subtitle hidden-xs">Glass<div class="th-subtitle">Pint &#8226; 10oz &#8226; 4oz</div></th>
@@ -44,7 +44,7 @@
                     </td>
                     <td class="name first-col-fullscreen"> {{name}}</td>
                     <td> {{style}}</td>
-                    <td> {{stage}} </td>
+                    <td class="hidden-xs"> {{stage}} </td>
                     <td class="hidden-xs"> {{abv}}</td>
                     <td class="price hidden-xs"> 
                         <span>${{growler_price}}</span> &#8226; <span>${{growler_fill}}</span>
@@ -63,8 +63,14 @@
             </table>
         </div>   
     </div> <!-- end #ontap -->
-    <div id="other-items" class="visible-lg">
-	    <h2>Beer Flights</h2>
-        <p class="price">Any 4 beers in 4oz tasting glasses: <span>$8.00</span></p>
+    <div id="other-items" class="visible-lg container-fluid">
+        <div class="col-lg-6">
+            <h2>Beer Flights</h2>
+            <p class="price">Any 4 beers in 4oz tasting glasses: <span>$8.00</span></p>
+        </div>
+        <div class="col-lg-6">
+            <h2>Credit/Debit Cards</h2>
+            <p class="price">Minimum Charge: <span>$10.00</span></p>
+        </div>    
     </div>
 </template>
