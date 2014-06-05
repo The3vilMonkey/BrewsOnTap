@@ -39,8 +39,9 @@ Meteor.startup ->
 
     $(document).on "keydown", (event) ->
         if event.which is 122
-            event.preventDefault()
-            toggleFullScreen() # From fullscreen API
+            $("body").addClass "fullscreen"
+            # event.preventDefault()
+            # toggleFullScreen() # From fullscreen API
         return
 
 toggleFullScreen = ->
