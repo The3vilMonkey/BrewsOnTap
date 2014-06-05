@@ -135,6 +135,9 @@ p {
 }
 #other-items {
   padding-left: 30px;
+  .col-lg-6 {
+    padding-left: 0px;
+  }
 }
 #footer {
   font-size: 18px;
@@ -243,6 +246,10 @@ html:-webkit-full-screen {
 html:-ms-fullscreen {
   .fullscreenMixin();
   width: 100%; /* needed to center contents in IE */
+}
+
+body.fullscreen {
+  .fullscreenMixin();
 }
 
 
