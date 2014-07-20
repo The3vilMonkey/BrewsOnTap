@@ -6,7 +6,6 @@ Template.header.events
         if href
             Router.go(href)
 
-
     "click header button": (evt) ->
         evt.preventDefault()
         href = $(evt.target).attr('href')

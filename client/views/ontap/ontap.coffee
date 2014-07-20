@@ -32,7 +32,7 @@ Meteor.startup ->
             console.log "Exit Fullscreen"
         else
             $("body").addClass "fullscreen"
-
+            share.setFullscreenMargins()
             # Do functions when entering fullscreen
             console.log "Enter Fullscreen"
         return
@@ -40,6 +40,7 @@ Meteor.startup ->
     $(document).on "keydown", (event) ->
         if event.which is 122
             $("body").addClass "fullscreen"
+            share.setFullscreenMargins()
             # event.preventDefault()
             # toggleFullScreen() # From fullscreen API
         return

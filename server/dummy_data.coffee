@@ -69,3 +69,12 @@ Meteor.startup ->
                 taster_price: beer.taster_price
                 ontap: beer.ontap
             )
+
+
+    if Settings.find().count() is 0
+      Settings.insert(
+        screenMarginTop: 0
+        screenMarginRight: 0
+        screenMarginBottom: 0
+        screenMarginLeft: 0
+      )

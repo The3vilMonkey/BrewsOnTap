@@ -10,6 +10,14 @@ removeToolbarButtons = (arrayOfButtons) ->
 Router.configure 
   layoutTemplate: "layout"
 
+Router.waitOn( ->
+  Meteor.subscribe('settings')
+)
+
+Router.onAfterAction( ->
+  share.setFullscreenMargins()
+)
+
 Router.map ->
 
   @route "home",
@@ -47,7 +55,9 @@ Router.map ->
     onStop: ->
       Session.set( 'editingBeerId' , false )
 
-
+  @route "settings",
+    path: "/settings"
+    waitOn : Meteor.subscribe('settings')
 
 
   @route "beverages",
@@ -70,9 +80,6 @@ Router.map ->
       Session.set( 'editingBeverageId' , beverageId ) 
     onStop: ->
       Session.set( 'editingBeverageId' , false )
-
-
-      
 
   @route "admin",
     path: "/admin"
