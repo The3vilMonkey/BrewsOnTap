@@ -1,6 +1,7 @@
 Template.ontap.beers = () ->
     Beers.find({}, 
         sort: 
+            rank: 1
             ontap: -1
     )
 

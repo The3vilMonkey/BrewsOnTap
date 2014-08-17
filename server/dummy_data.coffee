@@ -18,6 +18,7 @@ Meteor.startup ->
           tulip_price: "3.50"
           taster_price: "2.00"
           ontap: true
+          rank: 1
         ,
           name: "Flipswitch IPA"
           style: "American IPA"
@@ -30,6 +31,7 @@ Meteor.startup ->
           tulip_price: "3.50"
           taster_price: "2.00"
           ontap: true
+          rank: 2
         ,
           name: "Wheatstone Bridge"
           style: "American Wheat"
@@ -42,6 +44,7 @@ Meteor.startup ->
           tulip_price: "3.50"
           taster_price: "2.00"
           ontap: true
+          rank: 3
         ,
           name: "Ampere Amber"
           style: "Amber California Common"
@@ -54,7 +57,10 @@ Meteor.startup ->
           tulip_price: "3.50"
           taster_price: "2.00"
           ontap: false
+          rank: 4
         ]
+        console.log("Inserting Dummy Data")
+        console.log(beers)
         _.each beers, (beer) ->
             Beers.insert(
                 name: beer.name
@@ -68,6 +74,7 @@ Meteor.startup ->
                 tulip_price: beer.tulip_price
                 taster_price: beer.taster_price
                 ontap: beer.ontap
+                rank: beer.rank
             )
 
 

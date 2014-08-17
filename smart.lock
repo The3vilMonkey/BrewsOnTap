@@ -7,68 +7,89 @@
       "autoform": {},
       "font-awesome": {},
       "accounts-ui-bootstrap-3": {},
-      "accounts-admin-ui-bootstrap-3": {}
+      "accounts-admin-ui-bootstrap-3": {},
+      "jqueryui": {}
     },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.7.1",
-        "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
+        "tag": "v0.8.2",
+        "commit": "05415a8891ea87a00fb1e2388585f2ca5a38e0da"
       },
       "bootstrap3-less": {
-        "git": "https://github.com/eprochasson/bootstrap3-less",
-        "tag": "v0.1.9",
-        "commit": "5c812c4d7ce72917a065f0424c3cf54e5ff2d16a"
+        "git": "https://github.com/simison/bootstrap3-less",
+        "tag": "v0.2.1",
+        "commit": "dc94a51ed00d7de6d6f2b6d65107a876d849ad61"
       },
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.8.0",
-        "commit": "54a820a4a561e7f49d6fbc05d24b75c3d8d2e9be"
+        "tag": "v0.16.1",
+        "commit": "34a447fd3a1b3164c78f865aabbac3ddc2d033fb"
       },
       "font-awesome": {
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
-        "tag": "v4.0.3",
-        "commit": "61e9361384347547ae144f8228faa4deffda23db"
+        "tag": "v4.1.0",
+        "commit": "ce6b1e92715d1938babc5d69c655c17e387f5926"
       },
       "accounts-ui-bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
-        "tag": "v0.3.0-1",
-        "commit": "93ffa5d0e325dc7026de89f6d90c178fa04bdd3a"
+        "tag": "v0.3.4",
+        "commit": "9f006ee48d869877d90d54ac75b54550a587df8f"
       },
       "accounts-admin-ui-bootstrap-3": {
         "git": "https://github.com/hharnisc/meteor-accounts-admin-ui-bootstrap-3.git",
-        "tag": "v0.2.5",
-        "commit": "381d4ca347f16d2ca2e1e6ca5f51c3f2e9c6c5cd"
+        "tag": "v0.2.6",
+        "commit": "fe74692303daf73d440f2729010bcf1557af62ca"
       },
-      "blaze-layout": {
-        "git": "https://github.com/EventedMind/blaze-layout.git",
-        "tag": "v0.2.4",
-        "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
+      "jqueryui": {
+        "git": "https://github.com/mizzao/meteor-jqueryui.git",
+        "tag": "v1.11.0",
+        "commit": "06194edc0bdbb28c34b3a656bf9cb6a32718b44e"
+      },
+      "iron-layout": {
+        "git": "https://github.com/EventedMind/iron-layout.git",
+        "tag": "v0.2.0",
+        "commit": "4a2d53e35ba036b0c189c7ceca34be494d4c6c97"
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
-        "tag": "v0.4.0",
-        "commit": "2cc6aac0d35a4e00b065c1437d540b2aefba5241"
+        "tag": "v0.7.0",
+        "commit": "77d267aec4ba8a70f677e5d9ef9fb91fb0e3f0f6"
       },
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.3.11",
-        "commit": "7e970671305657678e8508d8107d5e6c5e158559"
+        "tag": "v0.4.6",
+        "commit": "80554182486be0d8e74f7ed02194a5649d712e27"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
-        "tag": "v2.6.0",
-        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
-      },
-      "bootstrap-3": {
-        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
-        "tag": "v3.1.1-1",
-        "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
+        "tag": "v2.8.1",
+        "commit": "722ea63783d594341023836b7d418ab2567dab8c"
       },
       "roles": {
         "git": "https://github.com/alanning/meteor-roles.git",
         "tag": "v1.2.8",
         "commit": "68844ba216c348d332bdb840825850f497f515bb"
+      },
+      "build-fetcher": {
+        "git": "https://github.com/mizzao/meteor-build-fetcher.git",
+        "tag": "v0.2.0",
+        "commit": "5202ca83277860d798c6ff2ef1d8fe1bce007d0f"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.5",
+        "commit": "273e3ab7d005d91a1a59c71bd224533b4dae2fbd"
+      },
+      "iron-core": {
+        "git": "https://github.com/EventedMind/iron-core.git",
+        "tag": "v0.2.0",
+        "commit": "0e48b5dc50d03f01025b7b900fb5ce2f13d52cad"
+      },
+      "iron-dynamic-template": {
+        "git": "https://github.com/EventedMind/iron-dynamic-template.git",
+        "tag": "v0.2.1",
+        "commit": "4dd1185c4d9d616c9abdb3f33e4a7d5a88db7e18"
       }
     }
   }

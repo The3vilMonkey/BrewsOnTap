@@ -53,6 +53,11 @@
     ontap:
       type: Boolean
       label: "Ontap"
+
+    rank:
+      type: Number
+      label: "Rank"
+      min: 0
 )
 
 

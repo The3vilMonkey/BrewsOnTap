@@ -22,3 +22,8 @@ roles
 /moment
 /bootstrap-3
 /roles
+/jqueryui
+/iron-layout
+/build-fetcher
+/iron-core
+/iron-dynamic-template
