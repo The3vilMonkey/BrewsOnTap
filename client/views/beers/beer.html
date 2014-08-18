@@ -1,0 +1,36 @@
+<template name="beer">
+    <div class="container beer">
+        <div class="col-xs-12">
+            <div class="page-header"><h1>{{viewingBeer.name}}</h1>
+                <span class="beer-stage">{{viewingBeer.stage}}</span>
+                <span class="label label-default">{{viewingBeer.style}}</span>
+            </div>
+        </div>
+        <div class="beer-details col-xs-8">
+            <h3>Description</h3>
+            <p>{{viewingBeer.description}}</p>
+            <h3>Mash Ingredients</h3>
+            {{#each viewingBeer.mash_ingredients}}
+                <div class="label label-default">{{.}}</div>
+            {{/each}}
+            <h3>Boil Ingredients</h3>
+            {{#each viewingBeer.boil_ingredients}}
+                <div class="label label-default">{{.}}</div>
+            {{/each}}
+            <h3>Fermentation</h3>
+            {{#each viewingBeer.fermentation}}
+                <div class="label label-default">{{.}}</div>
+            {{/each}}
+        </div>
+        <div class="col-xs-4">
+            <h3> Stats</h3>
+            <div class="beer-stats">
+                <div>ABV%: {{viewingBeer.abv}}</div>
+                <div>SRM: {{viewingBeer.SRM}}</div>
+                <div>IBUs: {{viewingBeer.IBU}}</div>
+                <div>OG: {{viewingBeer.OG}}</div>
+                <div>FG: {{viewingBeer.FG}}</div>
+            </div>
+        </div>
+    </div>
+</template>
