@@ -19,6 +19,8 @@ Meteor.startup ->
           taster_price: "2.00"
           ontap: true
           rank: 1
+          SRM: 12.7
+          IBU: 100
         ,
           name: "Flipswitch IPA"
           style: "American IPA"
@@ -32,6 +34,8 @@ Meteor.startup ->
           taster_price: "2.00"
           ontap: true
           rank: 2
+          SRM: 12.7
+          IBU: 100
         ,
           name: "Wheatstone Bridge"
           style: "American Wheat"
@@ -45,6 +49,8 @@ Meteor.startup ->
           taster_price: "2.00"
           ontap: true
           rank: 3
+          SRM: 12.7
+          IBU: 100
         ,
           name: "Ampere Amber"
           style: "Amber California Common"
@@ -58,6 +64,8 @@ Meteor.startup ->
           taster_price: "2.00"
           ontap: false
           rank: 4
+          SRM: 12.7
+          IBU: 100
         ]
         console.log("Inserting Dummy Data")
         console.log(beers)
@@ -75,6 +83,8 @@ Meteor.startup ->
                 taster_price: beer.taster_price
                 ontap: beer.ontap
                 rank: beer.rank
+                SRM: beer.SRM
+                IBU: beer.IBU
             )
 
 

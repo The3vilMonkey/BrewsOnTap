@@ -42,6 +42,15 @@ Router.map ->
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
 
+  @route "beer",
+    path: "/beer/:id"
+    waitOn : Meteor.subscribe('beers')
+    onBeforeAction: ->
+      beerId = this.params.id
+      Session.set( 'viewingBeerId' , beerId ) 
+    onStop: ->
+      Session.set( 'viewingBeerId' , false )
+
   @route "add_beer",
     path: "/add_beer"
     waitOn : Meteor.subscribe('beers')

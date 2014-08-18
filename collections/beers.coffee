@@ -58,6 +58,43 @@
       type: Number
       label: "Rank"
       min: 0
+
+    SRM:
+      type: Number
+      label: "SRM"
+      decimal: true
+      min: 0
+
+    IBU:
+      type: Number
+      label: "IBUs"
+      decimal: true
+      min: 0
+
+    OG:
+      type: Number
+      label: "OG"
+      decimal: true
+      min: 0
+
+    FG:
+      type: Number
+      label: "FG"
+      decimal: true
+      min: 0
+
+    mash_ingredients:
+      type: [String]
+      label: "Mash Ingredients"
+
+    boil_ingredients:
+      type: [String]
+      label: "Boil Ingredients"
+
+    fermentation:
+      type: [String]
+      label: "Fermentation"
+
 )
 
 

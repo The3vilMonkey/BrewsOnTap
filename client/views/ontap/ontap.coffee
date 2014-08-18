@@ -22,6 +22,12 @@ Template.ontap.events
         evt.preventDefault()
         toggleFullScreen()
 
+    "click #beers-tbody .name, 
+     click #beers-tbody .ontap-icon,
+     click #beers-tbody .style": (evt) ->
+        evt.preventDefault()
+        href = $(evt.target).attr('href')
+        Router.go(href)
 
 Meteor.startup ->
     $(document).on "fullscreenchange", (event) -> # 'fullscreenchange' eventlistener from fullscreen API
