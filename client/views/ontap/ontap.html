@@ -34,7 +34,7 @@
             </thead>
             <tbody id="beers-tbody">
                 {{#each beers}}
-                <tr class="{{show ontap}}">
+                <tr id="sortable_{{_id}}" class="{{show ontap}}">
                     <td class="hidden-fullscreen hidden-print ontap-icon"> 
                         {{#if ontap}}
                             <span><i class="fa fa-3x fa-check-square"></i></span>

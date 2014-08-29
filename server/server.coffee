@@ -13,3 +13,13 @@ Meteor.publish('beverages', ->
 Meteor.publish('settings', ->
     Settings.find({})
 )
+
+
+Meteor.methods
+    updateBeerRank: (userId, rowBeerId, index) ->
+        if Roles.userIsInRole(Meteor.user(), ["admin"])
+            console.log("admin and updating")
+            Beers.update rowBeerId,
+                validate: false,
+                $set:
+                    rank: index
