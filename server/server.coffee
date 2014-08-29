@@ -16,10 +16,11 @@ Meteor.publish('settings', ->
 
 
 Meteor.methods
-    updateBeerRank: (userId, rowBeerId, index) ->
+    updateBeerRank: (rowBeerId, index) ->
         if Roles.userIsInRole(Meteor.user(), ["admin"])
             console.log("admin and updating")
             Beers.update rowBeerId,
-                validate: false,
                 $set:
                     rank: index
+            ,
+                validate: false
