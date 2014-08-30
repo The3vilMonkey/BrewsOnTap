@@ -18,8 +18,13 @@ Router.onAfterAction( ->
   share.setFullscreenMargins()
 )
 
-Router.map ->
+Meteor.startup ->
+  AccountsEntry.config
+    homeRoute: "/ontap" # mandatory - path to redirect to after sign-out
+    dashboardRoute: "/ontap" # mandatory - path to redirect to after successful sign-in
+    passwordSignupFields: "EMAIL_ONLY"
 
+Router.map ->
   @route "home",
     path: "/home"
     onBeforeAction: ->

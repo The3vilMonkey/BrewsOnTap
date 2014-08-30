@@ -8,7 +8,8 @@
       "font-awesome": {},
       "accounts-ui-bootstrap-3": {},
       "accounts-admin-ui-bootstrap-3": {},
-      "jqueryui": {}
+      "jqueryui": {},
+      "accounts-entry": {}
     },
     "packages": {
       "iron-router": {
@@ -23,8 +24,8 @@
       },
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.16.1",
-        "commit": "34a447fd3a1b3164c78f865aabbac3ddc2d033fb"
+        "tag": "v0.17.1",
+        "commit": "a4688e7d77019a68ef43c2a303e905748beeb860"
       },
       "font-awesome": {
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
@@ -33,8 +34,8 @@
       },
       "accounts-ui-bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
-        "tag": "v0.3.4",
-        "commit": "9f006ee48d869877d90d54ac75b54550a587df8f"
+        "tag": "v0.3.5",
+        "commit": "bbd0a8a46ae02526c2ebfee05fa8075d8d04a9ba"
       },
       "accounts-admin-ui-bootstrap-3": {
         "git": "https://github.com/hharnisc/meteor-accounts-admin-ui-bootstrap-3.git",
@@ -45,6 +46,11 @@
         "git": "https://github.com/mizzao/meteor-jqueryui.git",
         "tag": "v1.11.0",
         "commit": "06194edc0bdbb28c34b3a656bf9cb6a32718b44e"
+      },
+      "accounts-entry": {
+        "git": "https://github.com/Differential/accounts-entry.git",
+        "tag": "v0.8.1",
+        "commit": "3102c0641cab394ce4c3e54b655c85ec1610c092"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",
@@ -76,6 +82,16 @@
         "tag": "v0.2.0",
         "commit": "5202ca83277860d798c6ff2ef1d8fe1bce007d0f"
       },
+      "accounts-t9n": {
+        "git": "https://github.com/softwarerero/meteor-accounts-t9n.git",
+        "tag": "v0.0.5",
+        "commit": "ad9539a8818049d5d9fa050d8b2a1f62706483b1"
+      },
+      "simple-form": {
+        "git": "https://github.com/Differential/simple-form.git",
+        "tag": "v0.1.8",
+        "commit": "1ea0d3621b333e6f24f37e0e93efd3c081068716"
+      },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
         "tag": "v0.2.5",
@@ -90,6 +106,11 @@
         "git": "https://github.com/EventedMind/iron-dynamic-template.git",
         "tag": "v0.2.1",
         "commit": "4dd1185c4d9d616c9abdb3f33e4a7d5a88db7e18"
+      },
+      "underscore-string-latest": {
+        "git": "https://github.com/TimHeckel/meteor-underscore-string.git",
+        "tag": "v2.3.3",
+        "commit": "4a5d70eee48fbd90a6e6fc78747250d704a0b3bb"
       }
     }
   }

@@ -2,11 +2,18 @@
     <div id="ontap" class="drink-menu">
 
         <div id="logo-header" class="container-fluid">
-            <div class="col-xs-5">
+            <div class="col-xs-5 col-md-5">
                 <h1>Beer Menu</h1>
             </div>
-            <div class="col-xs-7">
+            <div class="col-xs-7 col-md-6">
                 <img id="logo" class="img-responsive" src="assets/images/logo_tin_whiskers.svg" />
+            </div>
+            <div class="hidden-xs col-md-1 fullscreen-btn-col">
+                {{#if userCanEdit}}
+                <button href="#" class="btn btn-default navbar-btn hidden-xs fullscreen-btn">
+                    <i class="fa fa-arrows-alt"></i>
+                </button>
+                {{/if}}
             </div>
         </div>
         <div class="table-responsive">
@@ -21,13 +28,7 @@
                     <th class="th-with-subtitle hidden-xs">Growler<div class="th-subtitle">Container &#8226; Fill</div></th>
                     <th class="th-with-subtitle hidden-xs">Glass<div class="th-subtitle">Pint &#8226; 10oz &#8226; 4oz</div></th>
                     {{#if userCanEdit}}
-                        <th class="hidden-fullscreen hidden-print hidden-xs th-with-btn">
-                            <button href="#" class="btn btn-default navbar-btn hidden-xs fullscreen">
-                                <i class="fa fa-arrows-alt"></i>
-                            </button>
-                            <button href="#" class="btn btn-default navbar-btn hidden-xs print">
-                                <i class="fa fa-print"></i>
-                            </button>         
+                        <th class="hidden-fullscreen hidden-print hidden-xs th-with-btn">  
                         </th>
                     {{/if}}
                 </tr>

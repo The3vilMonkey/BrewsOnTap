@@ -1,19 +1,9 @@
 /* CSS declarations go here */
 @import "/packages/bootstrap3-less/bootstrap.import.less";
 @import "/client/fonts.import.less";
+@import "/client/app_variables.import.less";
 
 
-@font-size: 14px;     // Your base font-size in pixels
-@content-color: #606060;
-@robot-grey: #4F4D4D;
-
-@robot-dark-grey: #212121;
-@robot-med-grey: #686766;
-@robot-light-grey: #d2d2d2;
-@headline-color: #951c23;
-@beer-heading-color: @robot-dark-grey;
-@sidebar-color: #ecd7ac;
-@sidebar-background-color: #686765;
 
 @fullscreen-padding-top: 50px;
 @fullscreen-padding-left: 50px;
@@ -54,25 +44,6 @@ h2 {
 
 p {
   margin: 0;
-}
-
-.login-buttons {
-  max-height: 34px;
-  display: inline-block !important;
-} 
-
-#logo-header {
-  background: #000;
-  h1 {
-    color: #fff;
-    padding-top: 20px;   //var?
-    padding-left: 20px;  //var?
-    font-size: 100px
-  }
-  #logo {
-    max-height: 120px;
-    padding-top: 10px;
-  }
 }
 
 .price {
@@ -141,20 +112,6 @@ p {
   padding-left: 30px;
   .col-lg-6 {
     padding-left: 0px;
-  }
-}
-#footer {
-  font-size: 18px;
-  color: white;
-  background-color: @robot-dark-grey;
-  padding: 10px 0 10px 0px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  p {
-    color: #ccc;
-    margin: 0;
   }
 }
 

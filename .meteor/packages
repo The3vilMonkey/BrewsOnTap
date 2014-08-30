@@ -11,8 +11,8 @@ autoform
 collection2
 font-awesome
 accounts-admin-ui-bootstrap-3
-accounts-ui-bootstrap-3
 accounts-password
 roles
 bootstrap-3
 jqueryui
+accounts-entry

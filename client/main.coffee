@@ -11,27 +11,6 @@ Meteor.startup ->
     share.setFullscreenMargins()
 
 
-Template.ontap.rendered = ->
-  # uses the 'sortable' interaction from jquery ui
-  $("#beers-tbody").sortable stop: (event, ui) -> # fired when an beer is dropped
-    _.defer ->
-      $beerTableRows = $("#beers-tbody").children("tr")
-      $beerTableRows.each ->
-        $beerTableRow = $(this)
-        index = $beerTableRow.index()
-        rowBeerId = UI.getElementData(this)._id
-        existingProps = Beers.findOne(rowBeerId)
-        Meteor.call("updateBeerRank", rowBeerId, index)
-        # Beers.update(_id : rowBeerId)
-          # $set : existingProps
-        # Beers.update rowBeerId,
-        #   validate: false,
-        #   $set:
-        #     rank: index
-      return
-  return
-
-
 
 share.setFullscreenMargins = ->
     settingsDep.depend()
