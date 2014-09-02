@@ -1,18 +1,10 @@
  <template name="header">
-    <header id="userHeader" class="hidden-fullscreen hidden-print hidden-xs">
+    <header id="userHeader" class="hidden-fullscreen hidden-print">
         <nav class="navbar navbar-default" role="navigation">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#toolbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+          <div class="userHeaderButtonWrapper">
+            <button href="/ontap" class="btn btn-default navbar-btn">
+              On Tap
             </button>
-          </div>
-
-
-          <div class="collapse navbar-collapse" id="toolbar">
             {{#if userCanEdit}}
               {{#if AddBeerBtn}}
                 <button href="/add_beer" class="btn btn-default navbar-btn"> Add Beer</button>
@@ -21,18 +13,15 @@
                 <button href="/add_beverage" class="btn btn-default navbar-btn"> Add Beverage</button>
               {{/if}}
             {{/if}}
-
             {{#if isInRole 'admin'}}
               <button href="/admin" class="btn btn-default navbar-btn"> User Admin</button>
               <button href="/settings" class="btn btn-default navbar-btn"> Settings</button>
             {{/if}}
-            <div class="nav navbar-nav navbar-right login-buttons">
-              {{#if currentUser}}
-                <button href="/sign-out" class="btn btn-default navbar-btn">Sign Out</button>
-              {{else}}
-                <button href="/sign-in" class="btn btn-default navbar-btn">Sign In</button>
-              {{/if}}
-            </div>
+            {{#if currentUser}}
+              <button href="/sign-out" class="btn btn-default navbar-btn">Sign Out</button>
+            {{else}}
+              <button href="/sign-in" class="btn btn-default navbar-btn">Sign In</button>
+            {{/if}}
           </div>
         </nav>
     </header> 
