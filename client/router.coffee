@@ -29,40 +29,46 @@ Router.map ->
     path: "/home"
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
+      this.next()
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
-  
-  @route "ontap",
+
+  @route "root",
     path: "/"
+    template: "ontap"
+    waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
+      this.next()
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
 
   @route "ontap",
     path: "/ontap"
-    waitOn : Meteor.subscribe('beers')
+    waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
+      this.next()
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
 
   @route "beer",
     path: "/beer/:id"
-    waitOn : Meteor.subscribe('beers')
+    waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       beerId = this.params.id
-      Session.set( 'viewingBeerId' , beerId ) 
+      Session.set( 'viewingBeerId' , beerId )
+      this.next() 
     onStop: ->
       Session.set( 'viewingBeerId' , false )
 
   @route "add_beer",
     path: "/add_beer"
-    waitOn : Meteor.subscribe('beers')
+    waitOn : -> Meteor.subscribe('beers')
 
   @route "edit_beer",
     path: "/edit_beer/:id"
-    waitOn : Meteor.subscribe('beers')
+    waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       beerId = this.params.id
       Session.set( 'editingBeerId' , beerId ) 
@@ -73,25 +79,26 @@ Router.map ->
     path: "/settings"
     waitOn : Meteor.subscribe('settings')
 
-
   @route "beverages",
     path: "/beverages"
     waitOn : Meteor.subscribe('beverages')
     onBeforeAction: ->
       addToolbarButtons(['AddBevBtn'])
+      this.next()
     onStop: ->
       removeToolbarButtons(['AddBevBtn'])
 
   @route "add_beverage",
     path: "/add_beverage"
-    waitOn : Meteor.subscribe('beverages')
+    waitOn : -> Meteor.subscribe('beverages')
 
   @route "edit_beverage",
     path: "/edit_beverage/:id"
-    waitOn : Meteor.subscribe('beverages')
+    waitOn : -> Meteor.subscribe('beverages')
     onBeforeAction: ->
       beverageId = this.params.id
-      Session.set( 'editingBeverageId' , beverageId ) 
+      Session.set( 'editingBeverageId' , beverageId )
+      this.next() 
     onStop: ->
       Session.set( 'editingBeverageId' , false )
 
@@ -103,8 +110,7 @@ Router.map ->
         # @render(@loadingTemplate)
       else if not Roles.userIsInRole(Meteor.user(), ["admin"])
         @redirect("/")
-      return
-
+      this.next()
 
   @route "brewery",
     path: "/brewery"
@@ -113,5 +119,6 @@ Router.map ->
       Meteor.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
+      this.next()
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
