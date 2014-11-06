@@ -85,7 +85,7 @@ Router.map ->
 
   @route "settings",
     path: "/settings"
-    waitOn : Meteor.subscribe('settings')
+    waitOn : -> Meteor.subscribe('settings')
 
   @route "beverages",
     path: "/beverages"
