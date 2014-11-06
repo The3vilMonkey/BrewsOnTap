@@ -1,15 +1,15 @@
-Template.edit_beverage.editingBeverage = ->
+Template.editBeverage.editingBeverage = ->
     beverageId = Session.get('editingBeverageId')
     if beverageId?
         return Beverages.findOne({_id : beverageId })
 
-Template.edit_beverage.events
+Template.editBeverage.events
     "click button.form-cancel": (evt) ->
         evt.preventDefault()
         href = $(evt.target).attr('href')
         Router.go(href)
 
-Template.add_beverage.events
+Template.addBeverage.events
     "click button.form-cancel": (evt) ->
         evt.preventDefault()
         href = $(evt.target).attr('href')

@@ -1,28 +1,28 @@
-@Beverages = new Meteor.Collection('beverages',
-  schema:
-    name:
-      type: String
-      label: "Name"
-      max: 100
+@Beverages = new Mongo.Collection("beverages")
+Beverages.attachSchema new SimpleSchema(
+  name:
+    type: String
+    label: "Name"
+    max: 100
 
-    description:
-      type: String
-      max: 500
-      label: "Description"
+  description:
+    type: String
+    max: 500
+    label: "Description"
 
-    size:
-      type: String
-      label: "Size"
-      max: 10
+  size:
+    type: String
+    label: "Size"
+    max: 10
 
-    price:
-      type: String
-      max: 6
-      label: "Price"
+  price:
+    type: String
+    max: 6
+    label: "Price"
 
-    isAvailable:
-      type: Boolean
-      label: "isAvailable?"
+  isAvailable:
+    type: Boolean
+    label: "isAvailable?"
 )
 
 

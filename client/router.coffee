@@ -70,16 +70,17 @@ Router.map ->
     onStop: ->
       Session.set( 'viewingBeerId' , false )
 
-  @route "add_beer",
-    path: "/add_beer"
+  @route "addBeer",
+    path: "/addBeer"
     waitOn : -> Meteor.subscribe('beers')
 
-  @route "edit_beer",
-    path: "/edit_beer/:id"
+  @route "editBeer",
+    path: "/editBeer/:id"
     waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       beerId = this.params.id
-      Session.set( 'editingBeerId' , beerId ) 
+      Session.set( 'editingBeerId' , beerId )
+      this.next()
     onStop: ->
       Session.set( 'editingBeerId' , false )
 
@@ -96,12 +97,12 @@ Router.map ->
     onStop: ->
       removeToolbarButtons(['AddBevBtn'])
 
-  @route "add_beverage",
-    path: "/add_beverage"
+  @route "addBeverage",
+    path: "/addBeverage"
     waitOn : -> Meteor.subscribe('beverages')
 
-  @route "edit_beverage",
-    path: "/edit_beverage/:id"
+  @route "editBeverage",
+    path: "/editBeverage/:id"
     waitOn : -> Meteor.subscribe('beverages')
     onBeforeAction: ->
       beverageId = this.params.id

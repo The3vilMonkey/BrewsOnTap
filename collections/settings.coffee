@@ -1,24 +1,24 @@
-@Settings = new Meteor.Collection('settings',
-  schema:
-    screenMarginTop:
-      type: Number
-      label: "Screen Margin Top (px)"
-      min: 0
+@Settings = new Mongo.Collection("settings")
+Settings.attachSchema new SimpleSchema(
+  screenMarginTop:
+    type: Number
+    label: "Screen Margin Top (px)"
+    min: 0
 
-    screenMarginRight:
-      type: Number
-      label: "Screen Margin Right (px)"
-      min: 0
+  screenMarginRight:
+    type: Number
+    label: "Screen Margin Right (px)"
+    min: 0
 
-    screenMarginBottom:
-      type: Number
-      label: "Screen Margin Bottom (px)"
-      min: 0
+  screenMarginBottom:
+    type: Number
+    label: "Screen Margin Bottom (px)"
+    min: 0
 
-    screenMarginLeft:
-      type: Number
-      label: "Screen Margin Left (px)"
-      min: 0
+  screenMarginLeft:
+    type: Number
+    label: "Screen Margin Left (px)"
+    min: 0
 )
 
 
