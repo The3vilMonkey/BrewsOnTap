@@ -7,7 +7,7 @@ Template.settings.events
         evt.preventDefault()
         Router.go('/ontap')
 
-@settingsDep = new Deps.Dependency
+@settingsDep = new Tracker.Dependency
 
 AutoForm.addHooks [
     "updateSettingsForm"

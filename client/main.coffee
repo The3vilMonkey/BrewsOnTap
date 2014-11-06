@@ -31,7 +31,7 @@ share.setFullscreenMargins = ->
             'right' : settings.screenMarginRight
             'bottom' : settings.screenMarginBottom
             'left' : settings.screenMarginLeft
-
         }
-        $('.fullscreen #layout_container').css(layoutContainerMargins)
-        $('.fullscreen #footer').css(footerPosition)
+        _.defer ->
+            $('.fullscreen #layout_container').css(layoutContainerMargins)
+            $('.fullscreen #footer').css(footerPosition)
