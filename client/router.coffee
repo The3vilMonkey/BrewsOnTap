@@ -18,6 +18,14 @@ Router.onAfterAction( ->
   share.setFullscreenMargins()
 )
 
+Router.onBeforeAction ->
+  # check for ie8 or less (don't support document.addEventListener)
+  if @url is '/'
+    Session.set('currentPage', 'ontap')
+  else
+    Session.set('currentPage', @url.split("/")[1])
+  this.next()
+
 Meteor.startup ->
   AccountsEntry.config
     homeRoute: "/ontap" # mandatory - path to redirect to after sign-out

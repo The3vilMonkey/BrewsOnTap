@@ -5,6 +5,12 @@ UI.registerHelper 'userCanEdit', ->
     else
         return false
 
+UI.registerHelper 'currentPageIs', (page) ->
+    currentPage = Session.get('currentPage')
+    if page == currentPage
+        return true
+    else
+        return false
 
 
 Meteor.startup ->

@@ -2,9 +2,11 @@
     <header id="userHeader" class="hidden-fullscreen hidden-print">
         <nav class="navbar navbar-default" role="navigation">
           <div class="userHeaderButtonWrapper">
-            <button href="/ontap" class="btn btn-default navbar-btn">
-              On Tap
-            </button>
+            {{#unless currentPageIs 'ontap'}}
+              <button href="/ontap" class="btn btn-default navbar-btn">
+                On Tap
+              </button>
+            {{/unless}}
             {{#if userCanEdit}}
               {{#if AddBeerBtn}}
                 <button href="/add_beer" class="btn btn-default navbar-btn"> Add Beer</button>
@@ -17,10 +19,11 @@
               <button href="/admin" class="btn btn-default navbar-btn"> User Admin</button>
               <button href="/settings" class="btn btn-default navbar-btn"> Settings</button>
             {{/if}}
+
             {{#if currentUser}}
-              <button href="/sign-out" class="btn btn-default navbar-btn">Sign Out</button>
+              <button href="/sign-out" class="btn btn-default navbar-btn pull-right">Sign Out</button>
             {{else}}
-              <button href="/sign-in" class="btn btn-default navbar-btn">Sign In</button>
+              <button href="/sign-in" class="btn btn-default navbar-btn pull-right">Sign In</button>
             {{/if}}
           </div>
         </nav>
