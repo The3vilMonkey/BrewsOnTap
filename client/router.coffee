@@ -47,7 +47,8 @@ Router.map ->
     waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
-      this.next()
+      @redirect("/ontap")
+      @next()
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
 
@@ -56,7 +57,19 @@ Router.map ->
     waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
-      this.next()
+      @next()
+    data : ->
+      beers = Beers.find({}, 
+        sort:
+          ontap: -1
+          rank: 1
+      )
+    action : ->
+      screenSize = Session.get("device-screensize")
+      if screenSize is "small"
+        @render("ontapMobile")
+      else
+        @render("ontap")
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
 
@@ -90,7 +103,7 @@ Router.map ->
 
   @route "beverages",
     path: "/beverages"
-    waitOn : Meteor.subscribe('beverages')
+    waitOn : -> Meteor.subscribe('beverages')
     onBeforeAction: ->
       addToolbarButtons(['AddBevBtn'])
       this.next()
