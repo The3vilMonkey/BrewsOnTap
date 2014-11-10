@@ -1,9 +1,9 @@
-Template.ontap.beers = () ->
-    Beers.find({}, 
-        sort:
-            ontap: -1
-            rank: 1
-    )
+# Template.ontap.beers = () ->
+#     Beers.find({}, 
+#         sort:
+#             ontap: -1
+#             rank: 1
+#     )
 
 Template.ontap.show = (ontap) ->
     if not ontap

@@ -1,0 +1,19 @@
+<template name="ontapMobile">
+    <div id="ontap" class="ontap-mobile">
+
+        <div id="logo-header" class="container-fluid">
+            <div class="col-sm-12">
+                <img id="logo" class="img-responsive" src="assets/images/logo_tin_whiskers.svg" />
+            </div>
+        </div>
+        <div class="container beers">
+            {{#each this}}
+            <div class="beer col-sm-12">
+                <h1>{{name}}</h1>
+                <h2>{{style}}</h2>
+                <div class="ontap-status">On Tap?: {{ontap}}</div>   
+            </div>
+            {{/each}}
+        </div>
+    </div> <!-- end #ontap -->   
+</template>
