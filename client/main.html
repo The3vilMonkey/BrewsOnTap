@@ -15,9 +15,10 @@
 
 
  <template name="layout">
-  <div id="layout_container" class="">
+  <div id="layout_container">
+  {{> yield region="header"}}
   {{> yield}}
-  {{> header}}
   {{> footer}}
+  {{> yield region="admin_menu"}}
   </div>
  </template>

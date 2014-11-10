@@ -1,4 +1,4 @@
-Template.header.events
+Template.admin_menu.events
     "click header .navbar a.navbar-brand": (evt) ->
         evt.preventDefault()
         $a = $(evt.target).closest('a')
@@ -12,8 +12,8 @@ Template.header.events
         Router.go(href)
 
 
-Template.header.AddBeerBtn = () ->
+Template.admin_menu.AddBeerBtn = () ->
     return Session.get('AddBeerBtn')
 
-Template.header.AddBevBtn = () ->
+Template.admin_menu.AddBevBtn = () ->
     return Session.get('AddBevBtn')

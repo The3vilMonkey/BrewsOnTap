@@ -1,0 +1,104 @@
+/* Full Screen Overrides */
+@import "/client/fonts.import.less";
+@import "/client/app_variables.import.less";
+
+@fullscreen-padding-top: 50px;
+@fullscreen-padding-left: 50px;
+@fullscreen-padding-right: 50px;
+@fullscreen-padding-bottom: 50px;
+
+.fullscreenMixin {
+  #logo-header-lrg {
+    h1 {
+      padding-top: @fullscreen-padding-top;
+    }
+    #logo {
+      max-height: 140px;
+      padding-top: @fullscreen-padding-top;
+    }
+  }
+  h2 {
+      color: #918f8b;
+      font-size: 52px;
+    }
+  p {
+      font-family: "Helvetica", Arial, sans-serif;
+      font-size: 28px;
+    }
+  .price {
+    font-size: 28px;
+    span {
+      font-size: 42px;  
+    }
+  }
+  .col-md-6 .price span {
+    line-height: 42px;
+  }
+  
+  .drink-menu {
+  font-size: 26px;
+    .name {
+        font-size: 44px;
+        font-family: 'OstrichSansBlack';
+    }
+
+    .first-col-fullscreen {
+      padding-left: @fullscreen-padding-left;
+    }
+
+    th {
+    font-size: 24px;
+        
+        &.th-with-subtitle {
+      .th-subtitle {
+              font-size: 20px;
+          }
+        }
+    }
+
+    tr {
+      color: @robot-dark-grey;
+    }
+    td {
+      line-height: 1.2;
+      vertical-align: middle !important;
+    }
+  
+  }
+  #other-items {
+    padding-left: @fullscreen-padding-left;
+  }
+  #footer {
+    padding-left: @fullscreen-padding-left;
+    padding-right: @fullscreen-padding-right;
+    padding-bottom: @fullscreen-padding-bottom;
+    p {
+      font-size: 26px;
+    }
+  }
+  .hidden-fullscreen, 
+  .hidden-print {
+    display: none;
+  }
+}
+
+html:fullscreen {
+  .fullscreenMixin();
+}
+
+html:-moz-full-screen {
+  .fullscreenMixin();
+}
+ 
+html:-webkit-full-screen {
+  .fullscreenMixin();
+}
+ 
+html:-ms-fullscreen {
+  .fullscreenMixin();
+  width: 100%; /* needed to center contents in IE */
+}
+
+body.fullscreen {
+  .fullscreenMixin();
+}
