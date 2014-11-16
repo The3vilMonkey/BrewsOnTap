@@ -48,7 +48,6 @@ Router.map ->
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
       @redirect("/ontap")
-      @next()
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
 
@@ -68,8 +67,11 @@ Router.map ->
       screenSize = Session.get("device-screensize")
       if screenSize is "small"
         @render("ontapMobile")
+        @render("header_sm", {to: "header"})
       else
         @render("ontap")
+        @render("header_lrg", {to: "header"})
+        @render("admin_menu", {to: "admin_menu"})
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
 
@@ -79,7 +81,15 @@ Router.map ->
     onBeforeAction: ->
       beerId = this.params.id
       Session.set( 'viewingBeerId' , beerId )
-      this.next() 
+      this.next()
+    action: ->
+      screenSize = Session.get("device-screensize")
+      if screenSize is "small"
+        @render("header_sm", {to: "header"})
+      else
+        @render("header_lrg", {to: "header"})
+        @render("admin_menu", {to: "admin_menu"})
+      @render("beer")
     onStop: ->
       Session.set( 'viewingBeerId' , false )
 

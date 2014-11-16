@@ -1,0 +1,240 @@
+@media print {
+
+
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  @page {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+   } 
+
+  #logo-header-lrg {
+  background: #000 !important;
+  h1 {
+    color: #fff !important;
+
+    }
+  }
+  .table {
+        td,
+        th {
+           background-color: #fff !important;
+           vertical-align: middle !important;
+        }
+        thead th,
+        thead th .th-subtitle {
+        background-color: #918f8b !important;
+        color: #fff !important;
+
+      }
+      
+  }
+  .col-md-6 {
+    width: 50%;
+    float: left;
+  }
+  #footer {
+    position: static;
+    clear: left;
+  }
+
+
+  /* Sizes for 4x6 */
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 8px;
+  }
+  #logo-header-lrg {
+    h1 {
+      top: 10px;
+      left: 10px;
+      font-size: 50px
+    }
+    #logo {
+      max-height: 110px;
+    }
+  }
+
+  .price {
+      font-size: 8px;
+      
+      span {
+        font-size: 10px;
+      }
+  }
+
+  .drink-menu {
+      
+      font-size: 10px;
+      
+      .name {
+        font-size: 18px;
+    }
+    
+    table {
+        margin: 0 0 10px 0;
+      }
+    
+    th {
+
+        &.th-with-subtitle {    
+          
+          .th-subtitle {
+              font-size: 8px;
+          }
+        }
+    }
+    
+    
+  }
+
+  /////////////////////////////////
+  // Footer
+  /////////////////////////////////
+
+  #footer {
+    font-size: 8px;
+    
+    .pull-right {
+      float: right !important;
+      text-align: right;
+    }
+  }
+}
+
+/////////////////////////////////
+// Fake 6x4
+/////////////////////////////////
+
+html.print {
+  width: 6in;
+  .hidden-print {
+    display: none;
+  }
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  @page {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+   } 
+
+  #logo-header-lrg {
+  background: #000 !important;
+  h1 {
+    color: #fff !important;
+
+    }
+  }
+  .table {
+        td,
+        th {
+           background-color: #fff !important;
+           vertical-align: middle !important;
+        }
+        thead th,
+        thead th .th-subtitle {
+        background-color: #918f8b !important;
+        color: #fff !important;
+
+      }
+      
+  }
+  .col-md-6 {
+    width: 50%;
+    float: left;
+  }
+  #footer {
+    position: static;
+    clear: left;
+  }
+
+
+  /* Sizes for 4x6 */
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 8px;
+  }
+  #logo-header-lrg {
+    height: 60px;
+
+    h1 {
+      top: 10px;
+      left: 10px;
+      font-size: 50px
+    }
+  }
+
+  .price {
+      font-size: 8px;
+      
+      span {
+        font-size: 10px;
+      }
+  }
+
+  .drink-menu {
+      
+      font-size: 10px;
+      
+      .name {
+        font-size: 18px;
+    }
+    
+    table {
+        margin: 0 0 10px 0;
+      }
+    
+    th {
+
+        &.th-with-subtitle {    
+          
+          .th-subtitle {
+              font-size: 8px;
+          }
+        }
+    }
+    
+    
+  }
+
+  /////////////////////////////////
+  // Footer
+  /////////////////////////////////
+
+  #footer {
+    font-size: 8px;
+    
+    .pull-right {
+      float: right !important;
+      text-align: right;
+    }
+  }
+}

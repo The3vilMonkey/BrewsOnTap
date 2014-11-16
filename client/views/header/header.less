@@ -1,9 +1,19 @@
-.userHeaderButtonWrapper {
-  margin: 0px 15px;
+.header {
+  background: #000;
+  .back-btn {
+    float: left;
+    color: white;
+    margin-top: 16px;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  .back-btn:hover, .back-btn:active {
+    color: grey;
+  }
+
 }
 
-#logo-header {
-  background: #000;
+#logo-header-lrg {
   h1 {
     color: #fff;
     padding-top: 20px;   //var?
@@ -16,9 +26,10 @@
   }
 }
 
-#userHeader {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
+#logo-header-sm {
+  height: 60px;
+  #logo {
+    height: 55px;
+    float: right !important;
+  }
 }

@@ -1,11 +1,11 @@
-UI.registerHelper 'userCanEdit', ->
+Blaze.registerHelper 'userCanEdit', ->
     loggedInUser = Meteor.user()
     if loggedInUser && Roles.userIsInRole(loggedInUser, ['admin', 'editor'])
         return true
     else
         return false
 
-UI.registerHelper 'currentPageIs', (page) ->
+Blaze.registerHelper 'currentPageIs', (page) ->
     currentPage = Session.get('currentPage')
     if page == currentPage
         return true
@@ -15,8 +15,13 @@ UI.registerHelper 'currentPageIs', (page) ->
 
 Meteor.startup ->
     share.setFullscreenMargins()
-
-
+    $(window).resize (evt) ->
+        screenSize = Session.get("device-screensize")
+        if screenSize is "small"
+            $('body').addClass('mobile')
+        else 
+            $('body').removeClass('mobile')
+    
 
 share.setFullscreenMargins = ->
     settingsDep.depend()
