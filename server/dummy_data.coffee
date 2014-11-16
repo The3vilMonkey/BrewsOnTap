@@ -21,6 +21,11 @@ Meteor.startup ->
           rank: 1
           SRM: 12.7
           IBU: 100
+          OG: "1.28"
+          FG: "1.12"
+          mash_ingredients: []
+          boil_ingredients: []
+          fermentation: []
         ,
           name: "Flipswitch IPA"
           style: "American IPA"
@@ -36,6 +41,11 @@ Meteor.startup ->
           rank: 2
           SRM: 12.7
           IBU: 100
+          OG: "1.28"
+          FG: "1.12"
+          mash_ingredients: []
+          boil_ingredients: []
+          fermentation: []
         ,
           name: "Wheatstone Bridge"
           style: "American Wheat"
@@ -51,6 +61,11 @@ Meteor.startup ->
           rank: 3
           SRM: 12.7
           IBU: 100
+          OG: "1.28"
+          FG: "1.12"
+          mash_ingredients: []
+          boil_ingredients: []
+          fermentation: []
         ,
           name: "Ampere Amber"
           style: "Amber California Common"
@@ -66,6 +81,11 @@ Meteor.startup ->
           rank: 4
           SRM: 12.7
           IBU: 100
+          OG: "1.28"
+          FG: "1.12"
+          mash_ingredients: []
+          boil_ingredients: []
+          fermentation: []
         ]
         console.log("Inserting Dummy Data")
         console.log(beers)
@@ -85,6 +105,11 @@ Meteor.startup ->
                 rank: beer.rank
                 SRM: beer.SRM
                 IBU: beer.IBU
+                OG: beer.OG
+                FG: beer.FG
+                mash_ingredients: beer.mash_ingredients
+                boil_ingredients: beer.boil_ingredients
+                fermentation: beer.fermentation
             )
 
 
