@@ -9,6 +9,7 @@ removeToolbarButtons = (arrayOfButtons) ->
 
 Router.configure 
   layoutTemplate: "layout"
+  loadingTemplate: "loading"
 
 Router.waitOn( ->
   Meteor.subscribe('settings')
