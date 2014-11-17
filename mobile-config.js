@@ -1,7 +1,7 @@
 App.info({
   name: 'Tin Whiskers',
   description: 'An app to track if your favorite brews are curruently on tap',
-  version: '0.0.1'
+  version: '0.0.2'
 });
 
 App.icons({
