@@ -27,18 +27,9 @@ Template.ontap.rendered = ->
         #   $set:
         #     rank: index
       return
-  footerActive(false)
+  share.footerActive(false)
 
     
-
-footerActive = (showFooter) ->
-    if showFooter is true
-        $('#footer').show()
-        $('#footer').css('position', 'fixed')
-    else
-        $('#footer').hide()
-        $('#footer').css('position', 'relative')
-
 Template.ontap.events
     "click button.edit": (evt) ->
         evt.preventDefault()
@@ -47,25 +38,6 @@ Template.ontap.events
 
     "click button.print": (evt) ->
         $("html").addClass("print");
-
-    "click button.fullscreen-btn": (evt) ->
-        evt.preventDefault()
-        share.setFullscreenMargins()
-        if $("body").hasClass "fullscreen"
-            $("body").removeClass "fullscreen"
-            $("body").addClass "regscreen"
-            footerActive(false)
-        else
-            $("body").addClass "fullscreen"
-            $("body").removeClass "regscreen"
-            footerActive(true)
-            $(".fullscreen .fullscreen-btn-col").hover (->
-                $(".fullscreen-btn").css("opacity",1)
-                return
-            ), ->
-                $(".fullscreen-btn").css("opacity",0)
-                return
-        # toggleFullScreen()
 
     "click #beers-tbody .name, 
      click #beers-tbody .ontap-icon,
