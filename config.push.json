@@ -1,0 +1,16 @@
+// {
+//   "apn": {
+//     "passphrase": "xxxxxxxxx",  
+//     "key": "apnProdKey.pem",
+//     "cert": "apnProdCert.pem"
+//   },
+//   "gcm": {
+//     "apiKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+//     "projectNumber": xxxxxxxxxxxx
+//   },
+//   "production": true,
+//   // "badge": true,
+//   // "sound": true,
+//   // "alert": true,
+//   // "vibrate": true
+// }

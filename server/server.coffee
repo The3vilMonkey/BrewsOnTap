@@ -24,3 +24,12 @@ Meteor.methods
                     rank: index
             ,
                 validate: false
+
+    sendNotification: (beer) ->
+        if Roles.userIsInRole(Meteor.user(), ["admin"])
+            Push.send
+              from: "Tin Whiskers"
+              title: beer.name " is now on tap"
+              # text: "World"
+              # badge: 12
+              # query: {}
