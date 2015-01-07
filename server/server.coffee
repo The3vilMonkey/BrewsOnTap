@@ -27,9 +27,10 @@ Meteor.methods
 
     sendNotification: (beer) ->
         if Roles.userIsInRole(Meteor.user(), ["admin"])
+            title = beer.name +  ' is now on tap'
             Push.send
               from: "Tin Whiskers"
-              title: beer.name " is now on tap"
+              title: title
               # text: "World"
               # badge: 12
               # query: {}

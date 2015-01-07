@@ -14,8 +14,8 @@ App.icons({
           
   'iphone': 'icons/robot_icon_60x60square.png',
   'iphone_2x': 'icons/robot_icon_120x120square.png',
-  'iphone_3x': 'icons/robot_icon_180x180square.png'
-  //'ipad': 'resources/icons/icon-72x72.png',
+  'iphone_3x': 'icons/robot_icon_180x180square.png',
+  'ipad': 'icons/robot_icon_72x72square.png'
   //'ipad_2x': 'resources/icons/icon-72x72@2x.png'
 });
 
