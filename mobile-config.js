@@ -1,7 +1,7 @@
 App.info({
   name: 'Tin Whiskers',
   description: 'An app to track if your favorite brews are currently on tap',
-  version: '0.0.5',
+  version: '0.0.6',
   email: 'george@twbrewing.com',
   website: 'http://twbrewing.com'
 });
@@ -12,7 +12,7 @@ App.icons({
   'android_hdpi': 'icons/robot_icon_72x72.png',
   'android_xhdpi': 'icons/robot_icon_96x96.png',
           
-  'iphone': 'icons/robot_icon_60x60square.png',
+  'iphone': 'icons/robot_icon_57x57square.png',
   'iphone_2x': 'icons/robot_icon_120x120square.png',
   'iphone_3x': 'icons/robot_icon_180x180square.png',
   'ipad': 'icons/robot_icon_72x72square.png'
