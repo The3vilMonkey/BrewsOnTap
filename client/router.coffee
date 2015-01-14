@@ -155,3 +155,19 @@ Router.map ->
       this.next()
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
+
+  @route "privacypolicy",
+    path: "/privacypolicy"
+    onBeforeAction: ->
+      addToolbarButtons(['AddBeerBtn'])
+      this.next()
+    action : ->
+      screenSize = Session.get("device-screensize")
+      if screenSize is "small"
+        @render("header_sm", {to: "header"})
+        @render("privacypolicy")
+      else
+        @render("header_lrg", {to: "header"})
+        @render("privacypolicy")
+    onStop: ->
+      removeToolbarButtons(['AddBeerBtn'])
