@@ -1,7 +1,7 @@
 App.info({
   name: 'Tin Whiskers',
   description: 'An app to track if your favorite brews are currently on tap',
-  version: '0.0.6',
+  version: '0.0.7',
   email: 'george@twbrewing.com',
   website: 'http://twbrewing.com'
 });

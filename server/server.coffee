@@ -17,8 +17,8 @@ Meteor.publish('settings', ->
 
 Meteor.methods
     updateBeerRank: (rowBeerId, index) ->
-        if Roles.userIsInRole(Meteor.user(), ["admin"])
-            console.log("admin and updating")
+        if Roles.userIsInRole(Meteor.user(), ["editor", "admin"])
+            console.log("editor and updating")
             Beers.update rowBeerId,
                 $set:
                     rank: index
@@ -26,11 +26,12 @@ Meteor.methods
                 validate: false
 
     sendNotification: (beer) ->
-        if Roles.userIsInRole(Meteor.user(), ["admin"])
-            title = beer.name +  ' is now on tap'
+        if Roles.userIsInRole(Meteor.user(), ["editor", "admin"])
+            console.log('push notification')
+            title = beer.name + ' is now on tap.'
             Push.send
-              from: "Tin Whiskers"
+              from: "Tin Whiskers Brewing"
               title: title
-              # text: "World"
+              text: "We've got one waiting for you."
               # badge: 12
-              # query: {}
+              query: {}

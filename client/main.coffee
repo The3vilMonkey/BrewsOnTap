@@ -54,16 +54,13 @@ AutoForm.addHooks [
     #operation will equal = insert, update, submit, or the method name
     onSuccess: (operation, result, template) ->
         if not share.currentlyOnTap and share.willBeOnTap
-            x = 10
-        share.askToSendNotification(template.data.doc)
-        share.currentlyOnTap = false
-        share.willBeOnTap = false     
+            share.askToSendNotification(template.data.doc)
+            # share.currentlyOnTap = true
+            # share.willBeOnTap = false     
 
-
-
-    onError: (operation, error, template) ->
-        share.currentlyOnTap = false
-        share.willBeOnTap = false   
+    # onError: (operation, error, template) ->
+    #     share.currentlyOnTap = false
+    #     share.willBeOnTap = false   
 
     
 share.askToSendNotification = (beer) ->
@@ -101,7 +98,7 @@ share.askToSendNotification = (beer) ->
                 label: "Send notification"
                 className: "btn-success"
                 callback: ->
-                    sendNotification(beer)
+                    Meteor.call("sendNotification", beer)
                     return
             warning:
                 label: "Save changes only"
