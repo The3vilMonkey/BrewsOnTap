@@ -14,6 +14,7 @@ Meteor.publish('settings', ->
     Settings.find({})
 )
 
+Push.debug = true
 
 Meteor.methods
     updateBeerRank: (rowBeerId, index) ->
