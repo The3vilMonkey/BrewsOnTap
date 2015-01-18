@@ -66,7 +66,7 @@ Router.map ->
       )
     action : ->
       screenSize = Session.get("device-screensize")
-      if screenSize is "small"
+      if screenSize is "xs"
         @render("ontapMobile")
         @render("header_sm", {to: "header"})
       else
@@ -85,7 +85,7 @@ Router.map ->
       this.next()
     action: ->
       screenSize = Session.get("device-screensize")
-      if screenSize is "small"
+      if screenSize is "xs"
         @render("header_sm", {to: "header"})
       else
         @render("header_lrg", {to: "header"})
