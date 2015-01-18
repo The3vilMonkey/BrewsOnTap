@@ -20,7 +20,6 @@ deps@1.0.6
 ejson@1.0.5
 email@1.0.5
 fastclick@1.0.2
-ficshelf:media-query@1.0.6
 follower-livedata@1.0.3
 geojson-utils@1.0.2
 handlebars@1.0.2
