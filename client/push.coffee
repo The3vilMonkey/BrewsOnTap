@@ -17,9 +17,6 @@
 Push.id()
 #Push.setBadge count
 
-Push.addListener "token", (token) -> 
-  reportTokenToServer token, appName or "main"
-  return
 
 
 AutoForm.addHooks [

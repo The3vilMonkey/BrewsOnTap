@@ -17,7 +17,7 @@ mrt:accounts-admin-ui-bootstrap-3
 mizzao:jquery-ui
 iron:router
 sacha:spin
-raix:push
 mizzao:bootboxjs
 meteorhacks:kadira
 bootstrap3-media-query
+raix:push
