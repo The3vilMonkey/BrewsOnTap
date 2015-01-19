@@ -11,6 +11,7 @@ binary-heap@1.0.2
 blaze@2.0.4
 blaze-tools@1.0.2
 boilerplate-generator@1.0.2
+bootstrap3-media-query@1.0.0
 callback-hook@1.0.2
 check@1.0.3
 coffeescript@1.0.5
@@ -19,7 +20,6 @@ deps@1.0.6
 ejson@1.0.5
 email@1.0.5
 fastclick@1.0.2
-ficshelf:media-query@1.0.6
 follower-livedata@1.0.3
 geojson-utils@1.0.2
 handlebars@1.0.2

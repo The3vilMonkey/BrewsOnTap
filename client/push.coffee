@@ -14,7 +14,7 @@
 #   alert: true
 #   vibrate: true
 
-# Push.id()
+Push.id()
 # #Push.setBadge count
 
 
