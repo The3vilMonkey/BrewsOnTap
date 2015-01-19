@@ -32,5 +32,5 @@ Meteor.methods
               from: "Tin Whiskers Brewing"
               title: "TW Ontap Update"
               text: text
-              # badge: 12
+              payload: beer
               query: {}

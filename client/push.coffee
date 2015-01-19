@@ -18,6 +18,14 @@ Push.id()
 # #Push.setBadge count
 
 
+Push.addListener "startup", (notification) ->
+    beer = notification.payload
+    beerId = beer._id
+    route = "/beer"+"/"+beerId
+    console.log("Going to route for beerId "+beerId)
+    Router.go(route) 
+
+
 AutoForm.addHooks [
     "insertBeerForm"
     "updateBeerForm"
