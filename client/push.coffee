@@ -1,21 +1,21 @@
-# PUSH notifications
-# Common client api
-Push.Configure
-  gcm:
-    # Required for Android and Chrome OS
-    projectNumber: "32933758074"
-  # only require for safari
-  #apn:
-  #  websitePushId: "com.push.server"
-  #  webServiceUrl: "http://some.server.com"
+# # PUSH notifications
+# # Common client api
+# Push.Configure
+#   gcm:
+#     # Required for Android and Chrome OS
+#     projectNumber: "32933758074"
+#   # only require for safari
+#   #apn:
+#   #  websitePushId: "com.push.server"
+#   #  webServiceUrl: "http://some.server.com"
 
-  #bagde: true
-  sound: true
-  alert: true
-  vibrate: true
+#   #bagde: true
+#   sound: true
+#   alert: true
+#   vibrate: true
 
-Push.id()
-#Push.setBadge count
+# Push.id()
+# #Push.setBadge count
 
 
 AutoForm.addHooks [
