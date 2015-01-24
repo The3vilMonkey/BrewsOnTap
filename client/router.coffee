@@ -48,7 +48,9 @@ Router.map ->
     waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
-      @redirect("/ontap")
+      document.location.replace("/ontap")
+      @next()
+      # @redirect("/ontap")
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
 

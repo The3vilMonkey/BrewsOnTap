@@ -1,5 +1,5 @@
-# PUSH notifications
-# Common client api
+# # PUSH notifications
+# # Common client api
 # Push.Configure
 #   gcm:
 #     # Required for Android and Chrome OS
@@ -15,8 +15,15 @@
 #   vibrate: true
 
 Push.id()
-#Push.setBadge count
+# #Push.setBadge count
 
+
+Push.addListener "startup", (notification) ->
+    beer = notification.payload
+    beerId = beer._id
+    route = "/beer"+"/"+beerId
+    console.log("Going to route for beerId "+beerId)
+    Router.go(route) 
 
 
 AutoForm.addHooks [
