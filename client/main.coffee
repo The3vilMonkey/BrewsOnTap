@@ -6,7 +6,12 @@ Meteor.startup ->
             $('body').addClass('mobile')
         else 
             $('body').removeClass('mobile')
-    
+
+if Meteor.isCordova
+    Meteor.startup ->
+        window.onpopstate = ->
+            if history.state and history.state.initial is true
+                navigator.app.exitApp()  
 
 share.setFullscreenMargins = ->
     settingsDep.depend()
@@ -25,3 +30,4 @@ share.setFullscreenMargins = ->
         _.defer ->
             $('.fullscreen #layout_container').css(layoutContainerMargins)
             $('.fullscreen #footer').css(footerPosition)
+
