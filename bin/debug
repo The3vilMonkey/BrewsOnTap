@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+#automatically break
+#NODE_OPTIONS="--debug-brk" $DIRNAME/run "$@"
+NODE_OPTIONS="--debug" $DIRNAME/run "$@"

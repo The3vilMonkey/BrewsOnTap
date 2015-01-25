@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#install build tools
+
+#sudo apt-get update; sudo apt-get install --yes openjdk-7-jdk
+#sudo apt-get update; sudo apt-get install --yes lib32z1 lib32stdc++6
+#meteor install-sdk android
+BUILDFOLDER=$1
+
+echo "meteor build ~/apks/TinWhiskers/${BUILDFOLDER} --server=ontap.twbrewing.com"
+meteor build ~/apks/TinWhiskers/${BUILDFOLDER} --server=ontap.twbrewing.com
