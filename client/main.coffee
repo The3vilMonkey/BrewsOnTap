@@ -10,9 +10,9 @@ Meteor.startup ->
 if Meteor.isCordova
     Meteor.startup ->
         document.addEventListener("backbutton", ->
-            if document.location.pathname is "/ontap" or ""
+            if document.location.pathname is "/"
                 navigator.app.exitApp()
-            else if document.location.pathname is "/"
+            else if document.location.pathname is "/ontap"
                 navigator.app.exitApp()
             false)
     # window.onpopstate = ->
