@@ -11,9 +11,13 @@ if Meteor.isCordova
     Meteor.startup ->
         document.addEventListener("backbutton", ->
             if document.location.pathname is "/"
+                # window.plugins.Suspend.suspendApp()
                 navigator.app.exitApp()
             else if document.location.pathname is "/ontap"
+                # window.plugins.Suspend.suspendApp()
                 navigator.app.exitApp()
+            else
+                history.go(-1)
             false)
     # window.onpopstate = ->
     #     debugger
