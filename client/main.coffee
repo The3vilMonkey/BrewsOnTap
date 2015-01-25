@@ -9,9 +9,20 @@ Meteor.startup ->
 
 if Meteor.isCordova
     Meteor.startup ->
-        window.onpopstate = ->
-            if history.state and history.state.initial is true
-                navigator.app.exitApp()  
+        document.addEventListener("backbutton", ->
+            if document.location.pathname is "/ontap" or ""
+                navigator.app.exitApp()
+            else if document.location.pathname is "/"
+                navigator.app.exitApp()
+            false)
+    # window.onpopstate = ->
+    #     debugger
+    #     console.log('popstate')
+    #     console.log(history)
+    #     console.log(history.state)
+    #     console.log(document.location.pathname)
+        #if history.state and history.state.initial is true
+            #navigator.app.exitApp()  
 
 share.setFullscreenMargins = ->
     settingsDep.depend()

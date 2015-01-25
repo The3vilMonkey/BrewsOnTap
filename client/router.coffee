@@ -42,20 +42,20 @@ Router.map ->
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
 
-  @route "root",
-    path: "/"
-    template: "ontap"
-    waitOn : -> Meteor.subscribe('beers')
-    onBeforeAction: ->
-      addToolbarButtons(['AddBeerBtn'])
-      document.location.replace("/ontap")
-      @next()
-      # @redirect("/ontap")
-    onStop: ->
-      removeToolbarButtons(['AddBeerBtn'])
+  # @route "root",
+  #   path: "/"
+  #   template: "ontap"
+  #   waitOn : -> Meteor.subscribe('beers')
+  #   onBeforeAction: ->
+  #     addToolbarButtons(['AddBeerBtn'])
+  #     document.location.replace("/ontap")
+  #     @next()
+  #     # @redirect("/ontap")
+  #   onStop: ->
+  #     removeToolbarButtons(['AddBeerBtn'])
 
   @route "ontap",
-    path: "/ontap"
+    path: ["/ontap", "/"]
     waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
