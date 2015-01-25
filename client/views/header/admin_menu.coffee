@@ -11,9 +11,9 @@ Template.admin_menu.events
         href = $(evt.target).attr('href')
         Router.go(href)
 
+Template.admin_menu.helpers
+    AddBeerBtn : () ->
+        return Session.get('AddBeerBtn')
 
-Template.admin_menu.AddBeerBtn = () ->
-    return Session.get('AddBeerBtn')
-
-Template.admin_menu.AddBevBtn = () ->
-    return Session.get('AddBevBtn')
+    AddBevBtn : () ->
+        return Session.get('AddBevBtn')

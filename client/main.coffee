@@ -14,6 +14,8 @@ if Meteor.isCordova
                 navigator.app.exitApp()
             else if document.location.pathname is "/"
                 navigator.app.exitApp()
+            else
+                history.go(-1)
             false)
     # window.onpopstate = ->
     #     debugger
