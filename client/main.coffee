@@ -20,11 +20,6 @@ if Meteor.isCordova
                 history.go(-1)
         ), false)
     # window.onpopstate = ->
-    #     debugger
-    #     console.log('popstate')
-    #     console.log(history)
-    #     console.log(history.state)
-    #     console.log(document.location.pathname)
         #if history.state and history.state.initial is true
             #navigator.app.exitApp()  
 
