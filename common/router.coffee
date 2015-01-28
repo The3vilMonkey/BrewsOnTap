@@ -36,6 +36,7 @@ Meteor.startup ->
 Router.map ->
   @route "home",
     path: "/home"
+    fastRender: true
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
       this.next()
@@ -44,6 +45,7 @@ Router.map ->
 
   @route "root",
     path: "/"
+    fastRender: true
     template: "ontap"
     waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
@@ -54,6 +56,7 @@ Router.map ->
 
   @route "ontap",
     path: "/ontap"
+    fastRender: true
     waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
@@ -78,6 +81,7 @@ Router.map ->
 
   @route "beer",
     path: "/beer/:id"
+    fastRender: true
     waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       beerId = this.params.id
