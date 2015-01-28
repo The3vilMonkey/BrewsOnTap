@@ -6,7 +6,27 @@ Meteor.startup ->
             $('body').addClass('mobile')
         else 
             $('body').removeClass('mobile')
-    
+
+if Meteor.isCordova
+    Meteor.startup ->
+        document.addEventListener("backbutton", (->
+            if document.location.pathname is "/"
+                # window.plugins.Suspend.suspendApp()
+                navigator.app.exitApp()
+            else if document.location.pathname is "/ontap"
+                # window.plugins.Suspend.suspendApp()
+                navigator.app.exitApp()
+            else
+                history.go(-1)
+        ), false)
+    # window.onpopstate = ->
+    #     debugger
+    #     console.log('popstate')
+    #     console.log(history)
+    #     console.log(history.state)
+    #     console.log(document.location.pathname)
+        #if history.state and history.state.initial is true
+            #navigator.app.exitApp()  
 
 share.setFullscreenMargins = ->
     settingsDep.depend()
@@ -25,3 +45,4 @@ share.setFullscreenMargins = ->
         _.defer ->
             $('.fullscreen #layout_container').css(layoutContainerMargins)
             $('.fullscreen #footer').css(footerPosition)
+

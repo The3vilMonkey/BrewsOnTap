@@ -1,5 +1,6 @@
-Template.settings.editingSettings = ->
-    return Settings.findOne({})
+Template.settings.helpers
+    editingSettings: ->
+        return Settings.findOne({})
 
 
 Template.settings.events

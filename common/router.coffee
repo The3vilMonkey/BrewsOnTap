@@ -43,6 +43,18 @@ Router.map ->
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
 
+  # @route "root",
+  #   path: "/"
+  #   template: "ontap"
+  #   waitOn : -> Meteor.subscribe('beers')
+  #   onBeforeAction: ->
+  #     addToolbarButtons(['AddBeerBtn'])
+  #     document.location.replace("/ontap")
+  #     @next()
+  #     # @redirect("/ontap")
+  #   onStop: ->
+  #     removeToolbarButtons(['AddBeerBtn'])
+
   @route "root",
     path: "/"
     fastRender: true
@@ -50,7 +62,22 @@ Router.map ->
     waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
-      @redirect("/ontap")
+      @next()
+    data : ->
+      beers = Beers.find({}, 
+        sort:
+          ontap: -1
+          rank: 1
+      )
+    action : ->
+      screenSize = Session.get("device-screensize")
+      if screenSize is "xs"
+        @render("ontapMobile")
+        @render("header_sm", {to: "header"})
+      else
+        @render("ontap")
+        @render("header_lrg", {to: "header"})
+        @render("admin_menu", {to: "admin_menu"})
     onStop: ->
       removeToolbarButtons(['AddBeerBtn'])
 
@@ -81,7 +108,6 @@ Router.map ->
 
   @route "beer",
     path: "/beer/:id"
-    fastRender: true
     waitOn : -> Meteor.subscribe('beers')
     onBeforeAction: ->
       beerId = this.params.id

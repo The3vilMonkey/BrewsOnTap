@@ -5,9 +5,10 @@
 #             rank: 1
 #     )
 
-Template.ontap.show = (ontap) ->
-    if not ontap
-        return "hidden-fullscreen"
+Template.ontap.helpers
+    show: (ontap) ->
+        if not ontap
+            return "hidden-fullscreen"
 
 Template.ontap.rendered = ->
   # uses the 'sortable' interaction from jquery ui

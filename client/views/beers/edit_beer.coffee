@@ -1,7 +1,8 @@
-Template.editBeer.editingBeer = ->
-    beerId = Session.get('editingBeerId')
-    if beerId
-        return Beers.findOne({_id : beerId })
+Template.editBeer.helpers
+    editingBeer: ->
+        beerId = Session.get('editingBeerId')
+        if beerId
+            return Beers.findOne({_id : beerId })
 
 Template.editBeer.events
     "click button.form-cancel": (evt) ->
