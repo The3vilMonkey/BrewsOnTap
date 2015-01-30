@@ -47,46 +47,8 @@ Template.ontap.events
         href = $(evt.target).attr('href')
         Router.go(href)
 
-Meteor.startup ->
-
-    # only works with fullscreenAPI which doesn't work with chromecast
-
-    # $(document).on "fullscreenchange webkitfullscreenchange mozfullscreenchange", (event) -> # 'fullscreenchange' eventlistener from fullscreen API
-    #     event.preventDefault()
-    #     if $("body").hasClass("fullscreen")
-    #         $("body").removeClass "fullscreen"
-    #         # Do functions when exiting fullscreen
-    #         console.log "Exit Fullscreen"
-    #     else
-    #         $("body").addClass "fullscreen"
-    #         share.setFullscreenMargins()
-    #         # Do functions when entering fullscreen
-    #         console.log "Enter Fullscreen"
-    #     return
-
-    # $(window).on "resize", (event) ->
-    #     _.defer ->
-    #         # doesn't work in VM
-    #         if  (window.innerWidth == screen.width && window.innerHeight == screen.height)
-    #             $("body").addClass "fullscreen"
-    #             $("body").removeClass "regscreen"
-    #             share.setFullscreenMargins()
-    #             console.log "Enter Fullscreen"
-    #         else    
-    #             $("body").removeClass "fullscreen"
-    #             $("body").addClass "regscreen"
-    #             console.log "Exit Fullscreen"
-
-    # $(document).on "keydown", (event) ->
-    #     document.webkitFullScreenKeyboardInputAllowed = true
-    #     if event.which is 122 and $("body").hasClass "fullscreen"
-    #         $("body").removeClass "fullscreen"
-    #         $("body").addClass "regscreen"
-    #         share.setFullscreenMargins()
-    #     else
-    #         $("body").addClass "fullscreen"
-    #         $("body").removeClass "regscreen"
-            
+Template.ontap.events(@swipeEvents)
+Template.ontap.rendered = @swipeInit
 
 
 toggleFullScreen = ->

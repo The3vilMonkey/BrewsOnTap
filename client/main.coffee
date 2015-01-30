@@ -41,3 +41,21 @@ share.setFullscreenMargins = ->
             $('.fullscreen #layout_container').css(layoutContainerMargins)
             $('.fullscreen #footer').css(footerPosition)
 
+@swipeInit = ->
+    $('.swipe').hammer (
+        drag_min_distance:1
+        swipe_velocity:0.1
+    )
+
+@swipeEvents =
+    "swipeleft .swipe": (e, t) ->
+        e.preventDefault()
+        history.back()
+        return
+
+    "swiperight .swipe": (e, t) ->
+        e.preventDefault()
+        history.forward()
+        return
+
+
