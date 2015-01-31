@@ -13,17 +13,20 @@ Template.beer.events
 # Template.beer.events(@swipeEvents)
 # Template.beer.rendered = @swipeInit
 
-Template.beer.rendered = ->
-    _.defer ->
-        # $('.swipe').hammer
-        #     drag_min_distance:1
-        #     swipe_velocity:0.1
+# Template.beer.rendered = ->
+#     _.defer ->
+#         # $('.swipe').hammer
+#         #     drag_min_distance:1
+#         #     swipe_velocity:0.1
 
-        hammer = $(".swipe").hammer()
-        hammer.on "swipeleft", (e) ->
-            e.stopPropagation()
-            console.log "This did just happen."
-            return    
+#         hammer = $(".swipe").hammer(
+#             drag_min_distance:1
+#             swipe_velocity:0.1
+#             prevent_default: true
+#         )
+#         hammer.on "swipeleft panright", (e) ->
+#             console.log "This did just happen."
+#             return    
     # debugger
     # options =
     #     drag_min_distance:1
@@ -34,15 +37,15 @@ Template.beer.rendered = ->
     #     console.log ev
     #     return
 
-# Template.beer.events =
-#     "swipeleft .swipe": (e, t) ->
-#         e.preventDefault()
-#         console.log('swipeleft')
-#         history.back()
-#         return
+Template.beer.events =
+    "swipeleft .swipe": (e, t) ->
+        e.preventDefault()
+        console.log('swipeleft')
+        history.back()
+        return
 
-#     "swiperight .swipe": (e, t) ->
-#         e.preventDefault()
-#         console.log('swipeleft')
-#         history.forward()
-#         return
+    "swiperight .swipe": (e, t) ->
+        e.preventDefault()
+        console.log('swipeleft')
+        history.forward()
+        return

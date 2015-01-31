@@ -58,4 +58,11 @@ share.setFullscreenMargins = ->
         history.forward()
         return
 
+Blaze.body.rendered = ->
+    $("body").hammer(
+        drag_min_distance:1
+        swipe_velocity:0.1
+    )
+    return
+
 
