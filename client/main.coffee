@@ -7,6 +7,20 @@ Meteor.startup ->
         else 
             $('body').removeClass('mobile')
 
+    swipecontrol = $("body").hammer(
+        drag_min_distance:1
+        swipe_velocity:0.1
+        prevent_default: true
+    )
+    swipecontrol.on('swipeleft', ->
+        console.log('swipeleft')
+        history.back()
+    )
+    swipecontrol.on('swiperight', ->
+        console.log('swiperight')
+        history.back()
+    )
+
 if Meteor.isCordova
     Meteor.startup ->
         document.addEventListener("backbutton", (->
@@ -41,28 +55,28 @@ share.setFullscreenMargins = ->
             $('.fullscreen #layout_container').css(layoutContainerMargins)
             $('.fullscreen #footer').css(footerPosition)
 
-@swipeInit = ->
-    $('.swipe').hammer (
-        drag_min_distance:1
-        swipe_velocity:0.1
-    )
+# @swipeInit = ->
+#     $('.swipe').hammer (
+#         drag_min_distance:1
+#         swipe_velocity:0.1
+#     )
 
-@swipeEvents =
-    "swipeleft .swipe": (e, t) ->
-        e.preventDefault()
-        history.back()
-        return
+# @swipeEvents =
+#     "swipeleft .swipe": (e, t) ->
+#         e.preventDefault()
+#         history.back()
+#         return
 
-    "swiperight .swipe": (e, t) ->
-        e.preventDefault()
-        history.forward()
-        return
+#     "swiperight .swipe": (e, t) ->
+#         e.preventDefault()
+#         history.forward()
+#         return
 
-Blaze.body.rendered = ->
-    $("body").hammer(
-        drag_min_distance:1
-        swipe_velocity:0.1
-    )
-    return
-
-
+Template.layout.helpers
+    transition: ->
+        (from, to, element) ->
+            route = Router.current().route.getName() 
+            if route is 'beer'
+                return 'right-to-left'
+            else if route is '/' or route is 'ontap'
+                return 'left-to-right'

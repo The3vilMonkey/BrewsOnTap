@@ -24,3 +24,5 @@ bootstrap3-media-query
 meteorhacks:fast-render
 noorderstorm:hammer
 fastclick
+percolate:momentum-iron-router
+meteorhacks:subs-manager

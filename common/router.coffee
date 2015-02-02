@@ -12,7 +12,7 @@ Router.configure
   loadingTemplate: "loading"
 
 Router.waitOn( ->
-  Meteor.subscribe('settings')
+  subs.subscribe('settings')
 )
 
 Router.onAfterAction( ->
@@ -33,6 +33,10 @@ Meteor.startup ->
     dashboardRoute: "/ontap" # mandatory - path to redirect to after successful sign-in
     passwordSignupFields: "EMAIL_ONLY"
 
+# for use with Subscription Manager
+#https://atmospherejs.com/meteorhacks/subs-manager
+subs = new SubsManager()
+
 Router.map ->
   @route "home",
     path: "/home"
@@ -46,7 +50,7 @@ Router.map ->
   # @route "root",
   #   path: "/"
   #   template: "ontap"
-  #   waitOn : -> Meteor.subscribe('beers')
+  #   waitOn : -> subs.subscribe('beers')
   #   onBeforeAction: ->
   #     addToolbarButtons(['AddBeerBtn'])
   #     document.location.replace("/ontap")
@@ -59,7 +63,7 @@ Router.map ->
     path: "/"
     fastRender: true
     template: "ontap"
-    waitOn : -> Meteor.subscribe('beers')
+    waitOn : -> subs.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
       @next()
@@ -84,7 +88,7 @@ Router.map ->
   @route "ontap",
     path: "/ontap"
     fastRender: true
-    waitOn : -> Meteor.subscribe('beers')
+    waitOn : -> subs.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
       @next()
@@ -108,7 +112,7 @@ Router.map ->
 
   @route "beer",
     path: "/beer/:id"
-    waitOn : -> Meteor.subscribe('beers')
+    waitOn : -> subs.subscribe('beers')
     onBeforeAction: ->
       beerId = this.params.id
       Session.set( 'viewingBeerId' , beerId )
@@ -126,11 +130,11 @@ Router.map ->
 
   @route "addBeer",
     path: "/addBeer"
-    waitOn : -> Meteor.subscribe('beers')
+    waitOn : -> subs.subscribe('beers')
 
   @route "editBeer",
     path: "/editBeer/:id"
-    waitOn : -> Meteor.subscribe('beers')
+    waitOn : -> subs.subscribe('beers')
     onBeforeAction: ->
       beerId = this.params.id
       Session.set( 'editingBeerId' , beerId )
@@ -140,11 +144,11 @@ Router.map ->
 
   @route "settings",
     path: "/settings"
-    waitOn : -> Meteor.subscribe('settings')
+    waitOn : -> subs.subscribe('settings')
 
   @route "beverages",
     path: "/beverages"
-    waitOn : -> Meteor.subscribe('beverages')
+    waitOn : -> subs.subscribe('beverages')
     onBeforeAction: ->
       addToolbarButtons(['AddBevBtn'])
       this.next()
@@ -153,11 +157,11 @@ Router.map ->
 
   @route "addBeverage",
     path: "/addBeverage"
-    waitOn : -> Meteor.subscribe('beverages')
+    waitOn : -> subs.subscribe('beverages')
 
   @route "editBeverage",
     path: "/editBeverage/:id"
-    waitOn : -> Meteor.subscribe('beverages')
+    waitOn : -> subs.subscribe('beverages')
     onBeforeAction: ->
       beverageId = this.params.id
       Session.set( 'editingBeverageId' , beverageId )
@@ -178,8 +182,8 @@ Router.map ->
   @route "brewery",
     path: "/brewery"
     waitOn : ->
-      Meteor.subscribe('breweries')
-      Meteor.subscribe('beers')
+      subs.subscribe('breweries')
+      subs.subscribe('beers')
     onBeforeAction: ->
       addToolbarButtons(['AddBeerBtn'])
       this.next()

@@ -47,8 +47,9 @@ Template.ontap.events
         href = $(evt.target).attr('href')
         Router.go(href)
 
-Template.ontap.events(@swipeEvents)
-Template.ontap.rendered = @swipeInit
+# Template.ontap.events(@swipeEvents)
+# Template.ontap.rendered = @swipeInit
+
 
 
 toggleFullScreen = ->
