@@ -14,9 +14,10 @@ Meteor.startup ->
     swipecontrol.on('swipeleft', (evt) ->
         evt.preventDefault()
         console.log('swipeleft')
-        if document.location.pathname is "/"
+        routename = Router.current().route.getName()
+        if routename is "root"
             return
-        else if document.location.pathname is "/ontap"
+        else if routename is "ontap"
             return
         else
             history.forward()
@@ -24,9 +25,8 @@ Meteor.startup ->
     swipecontrol.on('swiperight', (evt) ->
         evt.preventDefault()
         console.log('swiperight')
-        if document.location.pathname is "/"
-            history.back()
-        else if document.location.pathname is "/ontap"
+        routename = Router.current().route.getName()
+        if routename is "beer"
             history.back()
         
     )
