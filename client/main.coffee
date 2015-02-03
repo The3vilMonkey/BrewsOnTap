@@ -13,18 +13,16 @@ Meteor.startup ->
     )
     swipecontrol.on('swipeleft', (evt) ->
         evt.preventDefault()
-        console.log('swipeleft')
+        console.log('swipe right to left')
         routename = Router.current().route.getName()
         if routename is "root"
-            return
+            history.forward()
         else if routename is "ontap"
-            return
-        else
             history.forward()
     )
     swipecontrol.on('swiperight', (evt) ->
         evt.preventDefault()
-        console.log('swiperight')
+        console.log('swipe left to right')
         routename = Router.current().route.getName()
         if routename is "beer"
             history.back()
@@ -88,5 +86,5 @@ Template.layout.helpers
             route = Router.current().route.getName() 
             if route is 'beer'
                 return 'right-to-left'
-            else if route is '/' or route is 'ontap'
+            else if route is 'root' or route is 'ontap'
                 return 'left-to-right'
