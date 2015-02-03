@@ -10,15 +10,25 @@ Meteor.startup ->
     swipecontrol = $("body").hammer(
         drag_min_distance:1
         swipe_velocity:0.1
-        prevent_default: true
     )
-    swipecontrol.on('swipeleft', ->
+    swipecontrol.on('swipeleft', (evt) ->
+        evt.preventDefault()
         console.log('swipeleft')
-        history.back()
+        if document.location.pathname is "/"
+            return
+        else if document.location.pathname is "/ontap"
+            return
+        else
+            history.forward()
     )
-    swipecontrol.on('swiperight', ->
+    swipecontrol.on('swiperight', (evt) ->
+        evt.preventDefault()
         console.log('swiperight')
-        history.back()
+        if document.location.pathname is "/"
+            history.back()
+        else if document.location.pathname is "/ontap"
+            history.back()
+        
     )
 
 if Meteor.isCordova
