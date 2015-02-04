@@ -113,10 +113,8 @@ Router.map ->
   @route "beer",
     path: "/beer/:id"
     waitOn : -> subs.subscribe('beers')
-    onBeforeAction: ->
-      beerId = this.params.id
-      Session.set( 'viewingBeerId' , beerId )
-      this.next()
+    data: ->
+      beer = Beers.findOne({_id : this.params.id })
     action: ->
       screenSize = Session.get("device-screensize")
       if screenSize is "xs"

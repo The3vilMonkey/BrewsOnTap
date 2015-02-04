@@ -23,9 +23,9 @@ Meteor.startup ->
           IBU: 100
           OG: "1.28"
           FG: "1.12"
-          mash_ingredients: []
-          boil_ingredients: []
-          fermentation: []
+          mash_ingredients: ["malt 1","malt 2"]
+          boil_ingredients: ["hops","lactose"]
+          fermentation: ["yeast","time"]
         ,
           name: "Flipswitch IPA"
           style: "American IPA"

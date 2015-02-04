@@ -2,37 +2,37 @@
     <div id="beer" class="container swipe">
         <div class="col-xs-12">
             <div class="page-header">
-                <h1>{{viewingBeer.name}}</h1>
+                <h1>{{name}}</h1>
                 <div>
-                    <div class="beer-stage">{{viewingBeer.stage}}</div>
-                    <div class="label label-default">{{viewingBeer.style}}</div>
+                    <div class="beer-stage">{{stage}}</div>
+                    <div class="label label-default">{{style}}</div>
                 </div>
             </div>
         </div>
         <div class="beer-details col-xs-8">
             <h3>Description</h3>
-            <p>{{viewingBeer.description}}</p>
+            <p>{{description}}</p>
             <h3>Mash Ingredients</h3>
-            {{#each viewingBeer.mash_ingredients}}
+            {{#each mash_ingredients}}
                 <div>{{.}}</div>
             {{/each}}
             <h3>Boil Ingredients</h3>
-            {{#each viewingBeer.boil_ingredients}}
+            {{#each boil_ingredients}}
                 <div>{{.}}</div>
             {{/each}}
             <h3>Fermentation</h3>
-            {{#each viewingBeer.fermentation}}
+            {{#each fermentation}}
                 <div>{{.}}</div>
             {{/each}}
         </div>
         <div class="col-xs-4">
             <h3> Stats</h3>
             <div class="beer-stats">
-                <div>ABV%: {{viewingBeer.abv}}</div>
-                <div>SRM: {{viewingBeer.SRM}}</div>
-                <div>IBUs: {{viewingBeer.IBU}}</div>
-                <div>OG: {{viewingBeer.OG}}</div>
-                <div>FG: {{viewingBeer.FG}}</div>
+                <div>ABV%: {{abv}}</div>
+                <div>SRM: {{SRM}}</div>
+                <div>IBUs: {{IBU}}</div>
+                <div>OG: {{OG}}</div>
+                <div>FG: {{FG}}</div>
             </div>
         </div>
     </div>
