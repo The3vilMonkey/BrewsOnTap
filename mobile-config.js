@@ -3,7 +3,7 @@ App.info({
   description: 'An app to track if your favorite brews are currently on tap',
 
   // REMEMBER to update changelog if revving version
-  version: '0.1.1',
+  version: '0.1.2',
 
 
   email: 'george@twbrewing.com',
