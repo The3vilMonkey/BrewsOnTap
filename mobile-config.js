@@ -3,7 +3,7 @@ App.info({
   description: 'An app to track if your favorite brews are currently on tap',
 
   // REMEMBER to update changelog if revving version
-  version: '0.1.2',
+  version: '0.1.3',
 
 
   email: 'george@twbrewing.com',
@@ -39,3 +39,7 @@ App.launchScreens({
   //'ipad_landscape': 'resources/splash/splash-1024x768.png',
   //'ipad_landscape_2x': 'resources/splash/splash-1024x768@2x.png',
 });
+
+// for ios7+
+App.setPreference('StatusBarOverlaysWebView', 'true');
+App.setPreference('StatusBarStyle', 'lightcontent');
