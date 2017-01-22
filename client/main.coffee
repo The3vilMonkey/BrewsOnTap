@@ -41,13 +41,13 @@ if Meteor.isCordova
             else
                 history.go(-1)
         ), false)
-    # window.onpopstate = ->
-        #if history.state and history.state.initial is true
-            #navigator.app.exitApp()  
-        iOS7orGreater = window.device 
-                and window.device.platform 
-                and window.device.platform.toLowerCase() == "ios"
-                and parseFloat(window.device.version) >= 7.0;
+        # window.onpopstate = ->
+            #if history.state and history.state.initial is true
+                #navigator.app.exitApp()  
+        iOS7orGreater = (window.device and 
+            window.device.platform and 
+            window.device.platform.toLowerCase() == "ios" and 
+            parseFloat(window.device.version) >= 7.0);
 
         if iOS7orGreater 
             $('body').addClass('iOS7plus');

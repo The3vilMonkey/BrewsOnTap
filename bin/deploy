@@ -2,4 +2,4 @@
 
 DIRNAME=$(cd `dirname $0` && pwd)
 
-meteor deploy ontap.twbrewing.com --settings --settings.json
+meteor deploy ontap.twbrewing.com --settings settings.json
